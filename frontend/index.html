@@ -4,140 +4,620 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Destiny Gardens – Nairobi's Premier Family Resort</title>
+<!-- SEO Meta Tags -->
+<title>Destiny Gardens Resort – Family Fun in Ruiru, Nairobi | Pool, Events & Kids Zone</title>
+<meta name="description" content="Nairobi's premier family resort in Ruiru. Crystal pools, kids adventure zone, birthday parties & events. From KSh 300/person. Book now: 0721 444144.">
+<meta name="keywords" content="Destiny Gardens Ruiru, family resort Nairobi, swimming pool Ruiru, birthday party venue Nairobi, kids fun Nairobi, Kamiti Road resort">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://destinygardens.co.ke/">
+
+<!-- Open Graph / WhatsApp / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://destinygardens.co.ke/">
+<meta property="og:title" content="Destiny Gardens – Nairobi's Premier Family Resort in Ruiru">
+<meta property="og:description" content="Crystal pools, kids adventure zone, birthday parties & events. From KSh 300. Book now!">
+<meta property="og:image" content="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=1200&q=80">
+<meta property="og:locale" content="en_KE">
+<meta property="og:site_name" content="Destiny Gardens">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Destiny Gardens – Nairobi's Premier Family Resort">
+<meta name="twitter:description" content="Crystal pools, kids adventure zone & birthday parties in Ruiru. From KSh 300.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=1200&q=80">
+
+<!-- Schema.org LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Resort","LocalBusiness"],
+  "name": "Destiny Gardens",
+  "description": "Nairobi's premier family resort featuring swimming pools, kids adventure zone, garden restaurant, and private event hosting in Ruiru.",
+  "url": "https://destinygardens.co.ke",
+  "telephone": "+254721444144",
+  "email": "hello@destinygardens.co.ke",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Along Ruiru-Kiambu Road (Kamiti Road)",
+    "addressLocality": "Ruiru",
+    "addressRegion": "Kiambu County",
+    "addressCountry": "KE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -1.1474,
+    "longitude": 36.9613
+  },
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"09:00","closes":"19:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday"],"opens":"09:00","closes":"20:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"08:00","closes":"21:00"}
+  ],
+  "priceRange": "KSh 200–8,000",
+  "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"312"}
+}
+</script>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="css/index.css">
+
+<style>
+:root {
+  --forest:#1a3a2a; --forest-mid:#2d5a3d; --forest-light:#4a8a5a;
+  --moss:#6aaa72; --amber:#f59e0b; --amber-dark:#d97706;
+  --cream:#fdfaf4; --white:#ffffff; --ink:#0f1f18; --muted:#6b7c74;
+  --danger:#ef4444; --success:#22c55e;
+  --shadow-sm:0 2px 8px rgba(15,31,24,.07);
+  --shadow-md:0 8px 28px rgba(15,31,24,.10);
+  --shadow-lg:0 24px 60px rgba(15,31,24,.14);
+  --radius:6px; --radius-lg:10px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+
+/* ── SKIP LINK (accessibility) ── */
+.skip-link{position:absolute;top:-60px;left:0;background:var(--forest);color:#fff;padding:10px 18px;z-index:10000;border-radius:0 0 4px 0;transition:top .2s;font-size:.85rem;}
+.skip-link:focus{top:0;}
+
+/* ── LOADER ── */
+.loader{position:fixed;inset:0;background:var(--forest);z-index:9997;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;transition:opacity .7s,visibility .7s;}
+.loader.gone{opacity:0;visibility:hidden;pointer-events:none;}
+.loader-logo{font-family:'Playfair Display',serif;font-size:2rem;color:var(--cream);letter-spacing:2px;}
+.loader-sub{font-size:.72rem;color:rgba(255,255,255,.4);letter-spacing:3px;text-transform:uppercase;}
+.loader-bar-wrap{width:160px;height:2px;background:rgba(255,255,255,.12);border-radius:2px;margin-top:6px;}
+.loader-bar{height:100%;background:var(--amber);border-radius:2px;width:0;animation:loadFill 2s ease forwards;}
+@keyframes loadFill{to{width:100%;}}
+
+/* ── CURSOR ── */
+.cursor{position:fixed;width:9px;height:9px;background:var(--amber);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .08s;mix-blend-mode:multiply;}
+.cursor-ring{position:fixed;width:32px;height:32px;border:1.5px solid var(--forest-light);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .16s ease;opacity:.5;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px;transition:background .35s,box-shadow .35s;}
+nav.scrolled{background:rgba(253,250,244,.97);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(26,58,42,.07),0 6px 28px rgba(26,58,42,.06);}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-icon{width:32px;height:32px;border:1.5px solid rgba(74,138,90,.55);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--moss);font-size:.95rem;transition:border-color .35s,color .35s;}
+nav.scrolled .nav-logo-icon{color:var(--forest);border-color:rgba(26,58,42,.3);}
+.nav-brand-text{font-family:'Playfair Display',serif;font-size:1.3rem;color:#fff;transition:color .35s;}
+nav.scrolled .nav-brand-text{color:var(--forest);}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{text-decoration:none;font-size:.86rem;font-weight:500;color:rgba(255,255,255,.82);letter-spacing:.3px;transition:color .25s;position:relative;padding-bottom:2px;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;background:var(--amber);transform:scaleX(0);transition:transform .28s;transform-origin:left;}
+.nav-links a:hover::after,.nav-links a:focus::after{transform:scaleX(1);}
+nav.scrolled .nav-links a{color:var(--forest-mid);}
+nav.scrolled .nav-links a:hover{color:var(--forest);}
+.nav-actions{display:flex;align-items:center;gap:10px;}
+.nav-call{display:flex;align-items:center;gap:7px;color:rgba(255,255,255,.75);font-size:.82rem;font-weight:500;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:8px 14px;border-radius:3px;transition:all .2s;}
+.nav-call:hover{background:rgba(255,255,255,.1);color:#fff;}
+nav.scrolled .nav-call{color:var(--forest-mid);border-color:rgba(26,58,42,.2);}
+nav.scrolled .nav-call:hover{background:var(--cream);color:var(--forest);}
+.nav-book{background:var(--amber);color:var(--ink);border:none;padding:9px 20px;border-radius:3px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.85rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:background .2s,transform .15s;}
+.nav-book:hover{background:var(--amber-dark);transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;transition:background .35s,transform .3s;}
+nav.scrolled .hamburger span{background:var(--forest);}
+
+/* ── MOBILE MENU ── */
+.mobile-menu{display:none;position:fixed;inset:0;z-index:490;background:rgba(8,18,12,.97);flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-family:'Playfair Display',serif;font-size:1.85rem;color:rgba(255,255,255,.85);text-decoration:none;transition:color .2s;}
+.mobile-menu a:hover{color:var(--amber);}
+.mobile-menu .mob-call{font-size:1rem;font-family:'DM Sans',sans-serif;color:var(--moss);display:flex;align-items:center;gap:8px;margin-top:10px;}
+.mobile-close{position:absolute;top:22px;right:26px;background:none;border:none;color:rgba(255,255,255,.5);font-size:1.4rem;cursor:pointer;}
+
+/* ── HERO ── */
+#hero{height:100vh;min-height:580px;position:relative;overflow:hidden;display:flex;align-items:flex-end;}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1601921004897-b7d582836990?w=1800&q=85') center/cover no-repeat;transform:scale(1.06);transition:transform 10s ease-out;}
+.hero-bg.loaded{transform:scale(1);}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,15,10,.15) 0%,rgba(5,15,10,.04) 28%,rgba(5,15,10,.52) 62%,rgba(5,15,10,.92) 100%);}
+.hero-content{position:relative;z-index:2;padding:0 6% 90px;max-width:1300px;width:100%;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.14);border:1px solid rgba(245,158,11,.38);color:var(--amber);padding:5px 13px;border-radius:2px;font-size:.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;animation:fadeUp .8s .2s both;}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6.5vw,5.4rem);color:#fff;line-height:1.03;margin-bottom:18px;animation:fadeUp .8s .4s both;}
+.hero-headline em{color:var(--amber);font-style:normal;}
+.hero-swahili{color:rgba(255,255,255,.48);font-size:.88rem;font-weight:300;letter-spacing:.5px;margin-bottom:14px;animation:fadeUp .8s .5s both;font-style:italic;}
+.hero-sub{color:rgba(255,255,255,.72);font-size:1.05rem;font-weight:300;max-width:480px;line-height:1.78;margin-bottom:36px;animation:fadeUp .8s .6s both;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .8s .8s both;}
+.btn-gold{background:var(--amber);color:var(--ink);padding:14px 30px;border-radius:3px;font-weight:700;font-size:.95rem;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:7px;}
+.btn-gold:hover{background:var(--amber-dark);transform:translateY(-2px);box-shadow:0 10px 28px rgba(245,158,11,.36);}
+.btn-outline-w{border:1.5px solid rgba(255,255,255,.45);color:#fff;padding:13px 30px;border-radius:3px;font-weight:500;font-size:.95rem;text-decoration:none;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:7px;background:transparent;}
+.btn-outline-w:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.8);}
+.hero-stat-row{position:absolute;bottom:88px;right:6%;display:flex;gap:2px;animation:fadeUp .8s 1s both;z-index:2;}
+.stat-cell{background:rgba(255,255,255,.08);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.12);padding:14px 20px;text-align:center;}
+.stat-cell:first-child{border-radius:4px 0 0 4px;}
+.stat-cell:last-child{border-radius:0 4px 4px 0;}
+.stat-n{font-family:'Playfair Display',serif;font-size:1.55rem;color:#fff;display:block;}
+.stat-l{font-size:.65rem;color:rgba(255,255,255,.48);letter-spacing:1px;text-transform:uppercase;display:block;margin-top:2px;}
+.scroll-cue{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:4px;color:rgba(255,255,255,.38);font-size:.65rem;letter-spacing:2px;text-transform:uppercase;animation:bob 2.5s infinite;z-index:2;}
+.scroll-cue::after{content:'';width:1px;height:32px;background:rgba(255,255,255,.22);}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(8px);}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:none;}}
+
+/* ── TODAY HOURS BANNER ── */
+.today-banner{background:var(--forest);padding:12px 6%;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;}
+.today-banner .tb-status{display:flex;align-items:center;gap:8px;color:#fff;font-size:.88rem;font-weight:500;}
+.tb-dot{width:8px;height:8px;border-radius:50%;background:var(--success);flex-shrink:0;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.6;transform:scale(.85);}}
+.tb-time{color:rgba(255,255,255,.6);font-size:.82rem;}
+.tb-cta{background:rgba(245,158,11,.2);border:1px solid rgba(245,158,11,.4);color:var(--amber);padding:5px 14px;border-radius:2px;font-size:.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:background .2s;}
+.tb-cta:hover{background:rgba(245,158,11,.35);}
+.tb-closed .tb-dot{background:var(--danger);}
+
+/* ── SECTION BASE ── */
+.sec{padding:96px 6%;max-width:1400px;margin:0 auto;}
+.lbl{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.lbl-dash{width:26px;height:1.5px;background:var(--amber);flex-shrink:0;}
+.lbl-txt{font-size:.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+.sec-h{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.8vw,3rem);line-height:1.12;color:var(--ink);margin-bottom:14px;}
+.sec-h em{color:var(--forest-light);font-style:normal;}
+.sec-p{font-size:.98rem;font-weight:300;color:var(--muted);line-height:1.8;max-width:540px;}
+
+/* ── ABOUT ── */
+#about-sec{background:var(--forest);overflow:hidden;}
+.about-grid{padding:86px 6%;display:grid;grid-template-columns:1fr 1fr;gap:76px;align-items:center;max-width:1400px;margin:0 auto;}
+.about-photos{position:relative;height:490px;}
+.ap-main{position:absolute;top:0;left:0;width:73%;height:84%;background:url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&q=80') center/cover;border-radius:var(--radius);box-shadow:0 28px 60px rgba(0,0,0,.42);}
+.ap-accent{position:absolute;bottom:0;right:0;width:53%;height:58%;background:url('https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=700&q=80') center/cover;border-radius:var(--radius);border:5px solid var(--forest);box-shadow:0 18px 44px rgba(0,0,0,.38);}
+.ap-badge{position:absolute;bottom:52%;left:60%;background:var(--amber);border-radius:3px;padding:14px 18px;text-align:center;box-shadow:0 8px 28px rgba(245,158,11,.42);z-index:2;}
+.ap-badge strong{display:block;font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--ink);}
+.ap-badge span{font-size:.65rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--ink);opacity:.7;}
+.about-copy .lbl-txt{color:rgba(255,255,255,.38);}
+.about-copy .sec-h{color:#fff;}
+.about-copy .sec-p{color:rgba(255,255,255,.56);max-width:100%;}
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px;}
+.perk{display:flex;align-items:flex-start;gap:11px;}
+.perk-ico{width:34px;height:34px;border-radius:7px;background:rgba(106,170,114,.15);display:flex;align-items:center;justify-content:center;color:var(--moss);font-size:.9rem;flex-shrink:0;margin-top:1px;}
+.perk h5{font-size:.88rem;font-weight:600;color:#fff;margin-bottom:2px;}
+.perk p{font-size:.78rem;color:rgba(255,255,255,.42);line-height:1.5;font-weight:300;}
+
+/* ── EXPERIENCES ── */
+#exp-sec{background:var(--cream);}
+.exp-hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:18px;}
+.exp-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;}
+.ec{border-radius:var(--radius);overflow:hidden;position:relative;cursor:pointer;}
+.ec::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(8,20,14,.85) 0%,rgba(8,20,14,.04) 52%,transparent 100%);transition:opacity .3s;}
+.ec:hover::after{opacity:.6;}
+.ec img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease;display:block;}
+.ec:hover img{transform:scale(1.05);}
+.ec-info{position:absolute;bottom:0;left:0;right:0;padding:20px;z-index:2;transition:transform .26s;}
+.ec:hover .ec-info{transform:translateY(-4px);}
+.ec-tag{font-size:.65rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber);margin-bottom:4px;}
+.ec-name{font-family:'Playfair Display',serif;font-size:1.3rem;color:#fff;margin-bottom:3px;}
+.ec-price{font-size:.82rem;font-weight:400;color:rgba(255,255,255,.62);}
+.ec-arrow{position:absolute;top:16px;right:16px;z-index:3;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;opacity:0;transition:opacity .3s,background .3s;}
+.ec:hover .ec-arrow{opacity:1;background:var(--amber);color:var(--ink);}
+.ec.lg{grid-column:span 5;height:500px;}
+.ec.md{grid-column:span 4;height:500px;}
+.ec.sm{grid-column:span 3;height:500px;}
+.ec.wd{grid-column:span 7;height:280px;}
+.ec.cpt{grid-column:span 5;height:280px;}
+
+/* ── PACKAGES ── */
+#pkg-sec{background:#fff;border-top:1px solid rgba(26,58,42,.05);border-bottom:1px solid rgba(26,58,42,.05);}
+.pkg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(26,58,42,.07);border-radius:var(--radius);overflow:hidden;margin-top:52px;}
+.pkg{padding:40px 32px;border-right:1px solid rgba(26,58,42,.07);position:relative;overflow:hidden;transition:background .3s;}
+.pkg:last-child{border-right:none;}
+.pkg::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--forest-light);transform:scaleX(0);transition:transform .3s;}
+.pkg:hover::after{transform:scaleX(1);}
+.pkg:hover{background:var(--cream);}
+.pkg.feat{background:var(--forest);}
+.pkg.feat::after{background:var(--amber);}
+.pkg.feat:hover{background:var(--forest-mid);}
+.pkg-ico{width:48px;height:48px;border-radius:10px;background:rgba(26,58,42,.07);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--forest);font-size:1.2rem;}
+.pkg.feat .pkg-ico{background:rgba(255,255,255,.1);color:var(--amber);}
+.pkg-nm{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--ink);margin-bottom:5px;}
+.pkg.feat .pkg-nm{color:#fff;}
+.pkg-tg{font-size:.82rem;color:var(--muted);font-weight:300;line-height:1.6;margin-bottom:20px;}
+.pkg.feat .pkg-tg{color:rgba(255,255,255,.48);}
+.pkg-pr{font-family:'Playfair Display',serif;font-size:2.1rem;color:var(--forest);margin-bottom:2px;}
+.pkg.feat .pkg-pr{color:var(--amber);}
+.pkg-unit{font-size:.76rem;color:var(--muted);margin-bottom:24px;}
+.pkg.feat .pkg-unit{color:rgba(255,255,255,.36);}
+.pkg-feats{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:28px;}
+.pkg-feats li{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--ink);}
+.pkg.feat .pkg-feats li{color:rgba(255,255,255,.75);}
+.pkg-feats li i{color:var(--moss);font-size:.68rem;flex-shrink:0;}
+.pkg.feat .pkg-feats li i{color:var(--amber);}
+.pkg-cta{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:.85rem;color:var(--forest);text-decoration:none;border-bottom:1.5px solid var(--moss);padding-bottom:2px;transition:gap .2s;}
+.pkg.feat .pkg-cta{color:#fff;border-color:rgba(255,255,255,.32);}
+.pkg-cta:hover{gap:10px;}
+.pkg-badge{position:absolute;top:18px;right:18px;background:var(--amber);color:var(--ink);font-size:.64rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:2px;}
+
+/* ── PRICING CALCULATOR ── */
+#calc-sec{background:var(--cream);padding:0 6% 80px;}
+.calc-wrap{max-width:1400px;margin:0 auto;}
+.calc-box{background:var(--forest);border-radius:var(--radius-lg);padding:44px 48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.calc-left h3{font-family:'Playfair Display',serif;font-size:1.7rem;color:#fff;margin-bottom:8px;}
+.calc-left p{color:rgba(255,255,255,.52);font-size:.9rem;font-weight:300;line-height:1.7;}
+.calc-controls{display:flex;flex-direction:column;gap:16px;}
+.calc-row{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:14px 18px;}
+.calc-label{color:rgba(255,255,255,.75);font-size:.88rem;}
+.calc-label span{display:block;font-size:.72rem;color:rgba(255,255,255,.38);margin-top:1px;}
+.calc-stepper{display:flex;align-items:center;gap:10px;}
+.calc-stepper button{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);background:none;color:#fff;font-size:1rem;cursor:pointer;transition:background .2s,border-color .2s;display:flex;align-items:center;justify-content:center;}
+.calc-stepper button:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.5);}
+.calc-stepper span{color:#fff;font-weight:600;font-size:1rem;min-width:24px;text-align:center;}
+.calc-total{background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.35);border-radius:var(--radius);padding:18px 18px;display:flex;align-items:center;justify-content:space-between;margin-top:4px;}
+.calc-total-label{color:rgba(255,255,255,.65);font-size:.85rem;}
+.calc-total-price{font-family:'Playfair Display',serif;font-size:1.85rem;color:var(--amber);font-weight:700;}
+.calc-book-btn{width:100%;background:var(--amber);color:var(--ink);border:none;border-radius:var(--radius);padding:14px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:.95rem;cursor:pointer;transition:background .2s,transform .15s;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;}
+.calc-book-btn:hover{background:var(--amber-dark);transform:translateY(-1px);}
+
+/* ── GALLERY ── */
+#gal-sec{background:var(--forest);}
+.gal-sec-wrap{padding:96px 6%;max-width:1400px;margin:0 auto;}
+.gal-heading{color:#fff;}
+.gal-mosaic{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(3,170px);gap:7px;margin-top:40px;}
+.gt{overflow:hidden;border-radius:4px;cursor:pointer;position:relative;}
+.gt img{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .3s;filter:brightness(.87) saturate(.82);}
+.gt:hover img{transform:scale(1.07);filter:brightness(1.02) saturate(1.1);}
+.gt-ov{position:absolute;inset:0;background:rgba(8,20,14,0);transition:background .3s;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;opacity:0;}
+.gt:hover .gt-ov{background:rgba(8,20,14,.22);opacity:1;}
+.gt:nth-child(1){grid-column:span 2;grid-row:span 2;}
+.gt:nth-child(2){grid-column:span 2;}
+.gt:nth-child(3){grid-column:span 2;}
+.gt:nth-child(4){grid-column:span 1;}
+.gt:nth-child(5){grid-column:span 1;}
+.gt:nth-child(6){grid-column:span 2;}
+.gt:nth-child(7){grid-column:span 2;}
+.gt:nth-child(8){grid-column:span 2;}
+
+/* ── LIGHTBOX ── */
+.lightbox{position:fixed;inset:0;background:rgba(5,12,8,.95);z-index:9000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;}
+.lightbox.open{opacity:1;visibility:visible;}
+.lb-img{max-width:90vw;max-height:88vh;border-radius:4px;object-fit:contain;}
+.lb-close{position:absolute;top:20px;right:26px;background:none;border:none;color:rgba(255,255,255,.6);font-size:1.6rem;cursor:pointer;transition:color .2s;}
+.lb-close:hover{color:#fff;}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;font-size:.9rem;}
+.lb-nav:hover{background:rgba(255,255,255,.2);}
+.lb-prev{left:20px;}
+.lb-next{right:20px;}
+.lb-counter{position:absolute;bottom:20px;color:rgba(255,255,255,.5);font-size:.8rem;letter-spacing:1px;}
+
+/* ── SAFETY ── */
+#safety-sec{background:var(--cream);}
+.safety-grid{display:grid;grid-template-columns:1fr 1fr;gap:76px;align-items:center;}
+.safety-photo{height:540px;border-radius:var(--radius);overflow:hidden;background:url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=900&q=80') center/cover;position:relative;}
+.safety-badge{position:absolute;bottom:22px;left:22px;background:rgba(8,20,14,.9);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:16px 20px;display:flex;align-items:center;gap:11px;}
+.sb-ico{width:42px;height:42px;border-radius:8px;background:rgba(245,158,11,.2);display:flex;align-items:center;justify-content:center;color:var(--amber);font-size:1.15rem;flex-shrink:0;}
+.sb-txt strong{display:block;color:#fff;font-size:.92rem;}
+.sb-txt span{color:rgba(255,255,255,.42);font-size:.78rem;}
+.safety-list{display:flex;flex-direction:column;gap:14px;margin-top:32px;}
+.si{display:flex;align-items:flex-start;gap:14px;padding:16px 20px;border-radius:var(--radius);background:#fff;border:1px solid rgba(26,58,42,.07);transition:border-color .2s,transform .2s,box-shadow .2s;}
+.si:hover{border-color:var(--moss);transform:translateX(5px);box-shadow:var(--shadow-md);}
+.si-num{width:32px;height:32px;border-radius:50%;background:var(--forest);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:.82rem;font-weight:700;flex-shrink:0;}
+.si h5{font-weight:600;font-size:.9rem;color:var(--ink);margin-bottom:2px;}
+.si p{font-size:.82rem;color:var(--muted);line-height:1.55;}
+
+/* ── TESTIMONIALS FULL ── */
+#reviews-sec{background:#fff;border-top:1px solid rgba(26,58,42,.05);}
+.reviews-header{text-align:center;margin-bottom:52px;}
+.reviews-header .sec-p{margin:0 auto;}
+.google-badge{display:inline-flex;align-items:center;gap:10px;background:var(--cream);border:1px solid rgba(26,58,42,.09);border-radius:40px;padding:8px 18px;margin-top:16px;}
+.google-badge img{width:20px;height:20px;}
+.google-badge span{font-size:.82rem;font-weight:600;color:var(--ink);}
+.google-badge .g-stars{color:var(--amber);font-size:.72rem;letter-spacing:1px;}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.rcard{background:var(--cream);border:1px solid rgba(26,58,42,.08);border-radius:var(--radius);padding:26px 24px;transition:transform .25s,box-shadow .25s;}
+.rcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.rcard-stars{color:var(--amber);font-size:.78rem;letter-spacing:2px;margin-bottom:10px;}
+.rcard-text{font-size:.88rem;color:#3a4f43;font-weight:300;line-height:1.7;font-style:italic;margin-bottom:16px;}
+.rcard-author{display:flex;align-items:center;gap:10px;}
+.rcard-avatar{width:40px;height:40px;border-radius:50%;background:var(--forest);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1rem;flex-shrink:0;}
+.rcard-author strong{display:block;color:var(--ink);font-size:.85rem;}
+.rcard-author span{font-size:.75rem;color:var(--muted);}
+.rcard-source{float:right;font-size:.7rem;color:var(--muted);display:flex;align-items:center;gap:4px;}
+
+/* ── BOOKING ── */
+#booking-sec{background:linear-gradient(135deg,var(--forest) 0%,#0a1e14 100%);}
+.booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+.bk-info .lbl-txt{color:rgba(255,255,255,.36);}
+.bk-info .sec-h{color:#fff;}
+.bk-info .sec-p{color:rgba(255,255,255,.48);}
+.trust-signals{display:flex;flex-direction:column;gap:10px;margin-top:30px;}
+.ts{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.65);font-size:.84rem;}
+.ts i{color:var(--moss);width:16px;}
+.form-box{background:rgba(253,250,244,.98);border-radius:var(--radius-lg);padding:38px 36px;box-shadow:0 28px 72px rgba(0,0,0,.32);}
+.form-title{font-family:'Playfair Display',serif;font-size:1.55rem;color:var(--ink);margin-bottom:4px;}
+.form-sub{font-size:.84rem;color:var(--muted);margin-bottom:24px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.fg{display:flex;flex-direction:column;gap:4px;margin-bottom:12px;}
+.fg label{font-size:.72rem;font-weight:600;color:var(--ink);letter-spacing:.5px;text-transform:uppercase;}
+.fg input,.fg select,.fg textarea{border:1.5px solid rgba(26,58,42,.11);border-radius:4px;padding:10px 12px;font-family:'DM Sans',sans-serif;font-size:.9rem;color:var(--ink);background:#fff;outline:none;transition:border .2s,box-shadow .2s;-webkit-appearance:none;appearance:none;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--forest-light);box-shadow:0 0 0 3px rgba(74,138,90,.1);}
+.fg textarea{resize:none;}
+.fg .field-err{font-size:.72rem;color:var(--danger);display:none;}
+.fg.has-err input,.fg.has-err select{border-color:var(--danger);}
+.fg.has-err .field-err{display:block;}
+.btn-submit{width:100%;background:var(--forest);color:#fff;border:none;border-radius:4px;padding:14px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.95rem;cursor:pointer;transition:background .2s,transform .15s;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.btn-submit:hover{background:var(--forest-mid);transform:translateY(-1px);}
+.form-alternatives{display:flex;gap:10px;margin-top:12px;}
+.alt-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;border-radius:4px;padding:11px;font-size:.83rem;font-weight:600;text-decoration:none;transition:all .2s;}
+.alt-btn.wa{background:#25D366;color:#fff;}
+.alt-btn.wa:hover{background:#1ebe5e;}
+.alt-btn.call{background:var(--cream);color:var(--forest);border:1.5px solid rgba(26,58,42,.15);}
+.alt-btn.call:hover{background:#f0ede4;}
+
+/* ── FAQ ── */
+#faq-sec{background:var(--cream);}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:48px;}
+.faq-list{display:flex;flex-direction:column;gap:8px;}
+.faq-item{border:1px solid rgba(26,58,42,.09);border-radius:var(--radius);overflow:hidden;background:#fff;transition:border-color .2s;}
+.faq-item.open{border-color:var(--moss);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;font-weight:600;font-size:.9rem;color:var(--ink);gap:12px;user-select:none;}
+.faq-q i{color:var(--moss);transition:transform .3s;flex-shrink:0;font-size:.8rem;}
+.faq-item.open .faq-q i{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;}
+.faq-item.open .faq-a{max-height:200px;}
+.faq-a-inner{padding:0 20px 16px;font-size:.86rem;color:var(--muted);line-height:1.7;font-weight:300;}
+.faq-image{border-radius:var(--radius-lg);overflow:hidden;height:440px;background:url('https://images.unsplash.com/photo-1530549387789-4c1017266635?w=900&q=80') center/cover;position:relative;}
+.faq-img-badge{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);white-space:nowrap;background:rgba(8,20,14,.85);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-radius:40px;padding:10px 20px;color:#fff;font-size:.82rem;display:flex;align-items:center;gap:8px;}
+
+/* ── VISIT ── */
+#visit-sec{background:#fff;}
+.visit-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:52px;align-items:start;}
+.info-box{border:1px solid rgba(26,58,42,.09);border-radius:var(--radius);overflow:hidden;}
+.info-box-head{background:var(--forest);padding:20px 24px;display:flex;align-items:center;gap:10px;}
+.info-box-head i{color:var(--amber);font-size:1rem;}
+.info-box-head h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:#fff;}
+.info-box-body{padding:24px;}
+.hr-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid rgba(26,58,42,.06);}
+.hr-row:last-child{border:none;}
+.hr-row span:first-child{font-weight:500;font-size:.9rem;display:flex;align-items:center;gap:6px;}
+.hr-row span:last-child{font-size:.85rem;color:var(--muted);}
+.hr-row.today-row{background:rgba(74,138,90,.06);margin:0 -8px;padding:9px 8px;border-radius:4px;}
+.hr-row.today-row span{color:var(--forest);font-weight:700;}
+.hr-row.today-row span:last-child{color:var(--forest-light);}
+.hr-row .today-tag{background:var(--moss);color:#fff;font-size:.6rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:2px 7px;border-radius:2px;}
+.ct-list{display:flex;flex-direction:column;gap:14px;}
+.ct-row{display:flex;align-items:flex-start;gap:12px;}
+.ct-ico{width:38px;height:38px;border-radius:4px;background:var(--cream);display:flex;align-items:center;justify-content:center;color:var(--forest);font-size:.9rem;flex-shrink:0;}
+.ct-ro h6{font-weight:600;font-size:.82rem;color:var(--ink);margin-bottom:2px;}
+.ct-ro a,.ct-ro p{color:var(--muted);font-size:.85rem;text-decoration:none;font-weight:300;}
+.ct-ro a:hover{color:var(--forest-light);}
+.map-embed{border-radius:var(--radius);overflow:hidden;border:1px solid rgba(26,58,42,.09);margin-top:20px;}
+.map-embed iframe{display:block;width:100%;height:220px;border:none;}
+.directions-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--forest);color:#fff;border-radius:var(--radius);padding:13px;margin-top:14px;font-weight:600;font-size:.88rem;text-decoration:none;transition:background .2s,transform .15s;}
+.directions-btn:hover{background:var(--forest-mid);transform:translateY(-1px);}
+.wa-big{display:flex;align-items:center;justify-content:center;gap:9px;background:#25D366;color:#fff;border-radius:var(--radius);padding:14px;margin-top:14px;font-weight:700;font-size:.95rem;text-decoration:none;transition:background .2s,transform .15s;box-shadow:0 5px 18px rgba(37,211,102,.26);}
+.wa-big:hover{background:#1ebe5e;transform:translateY(-2px);}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:56px 6% 24px;}
+.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.07);}
+.ft-brand{font-family:'Playfair Display',serif;font-size:1.45rem;color:#fff;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.ft-brand i{color:var(--moss);}
+.ft-tagline{font-style:italic;color:rgba(255,255,255,.35);font-size:.82rem;margin-bottom:10px;}
+.ft-about{font-size:.84rem;color:rgba(255,255,255,.36);font-weight:300;line-height:1.7;}
+.ft-col h5{font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:14px;}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.ft-col a{text-decoration:none;color:rgba(255,255,255,.48);font-size:.85rem;font-weight:300;transition:color .2s;display:flex;align-items:center;gap:7px;}
+.ft-col a i{width:14px;font-size:.8rem;}
+.ft-col a:hover{color:var(--amber);}
+.ft-bot{padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.ft-copy{font-size:.76rem;color:rgba(255,255,255,.26);}
+.ft-bot a{color:rgba(255,255,255,.26);text-decoration:none;font-size:.76rem;transition:color .2s;}
+.ft-bot a:hover{color:rgba(255,255,255,.52);}
+
+/* ── FLOATING BUTTONS ── */
+.float-btns{position:fixed;bottom:24px;right:24px;z-index:400;display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
+.float-wa{width:54px;height:54px;border-radius:50%;background:#25D366;color:#fff;font-size:1.45rem;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 5px 22px rgba(37,211,102,.4);transition:transform .2s;animation:waPop 3s infinite;}
+.float-wa:hover{transform:scale(1.1);}
+.float-call{width:46px;height:46px;border-radius:50%;background:var(--forest);color:#fff;font-size:1rem;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 16px rgba(26,58,42,.35);transition:transform .2s,background .2s;}
+.float-call:hover{transform:scale(1.1);background:var(--forest-mid);}
+@keyframes waPop{0%,100%{box-shadow:0 5px 22px rgba(37,211,102,.4);}50%{box-shadow:0 7px 36px rgba(37,211,102,.65);}}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:100px;right:24px;z-index:8000;background:var(--forest);color:#fff;padding:14px 20px;border-radius:var(--radius);font-size:.88rem;display:flex;align-items:center;gap:10px;box-shadow:var(--shadow-lg);transform:translateY(20px);opacity:0;transition:all .4s;pointer-events:none;}
+.toast.show{transform:none;opacity:1;}
+.toast i{color:var(--success);}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.in{opacity:1;transform:none;}
+.reveal-l{opacity:0;transform:translateX(-32px);transition:opacity .65s ease,transform .65s ease;}
+.reveal-l.in{opacity:1;transform:none;}
+.reveal-r{opacity:0;transform:translateX(32px);transition:opacity .65s ease,transform .65s ease;}
+.reveal-r.in{opacity:1;transform:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .ec.lg,.ec.md,.ec.sm,.ec.wd,.ec.cpt{grid-column:span 6;}
+  .ec.lg,.ec.md,.ec.sm{height:300px;}
+  .pkg-grid{grid-template-columns:repeat(2,1fr);}
+  .pkg{border-bottom:1px solid rgba(26,58,42,.07);}
+  .about-grid,.safety-grid,.booking-grid,.faq-grid,.visit-grid{grid-template-columns:1fr;}
+  .about-photos{height:320px;}
+  .calc-box{grid-template-columns:1fr;gap:28px;}
+  .reviews-grid{grid-template-columns:1fr 1fr;}
+  .ft-top{grid-template-columns:1fr 1fr;}
+  .faq-image{height:280px;}
+}
+@media(max-width:768px){
+  .nav-links,.nav-call,.nav-book{display:none;}
+  .hamburger{display:flex;}
+  .hero-stat-row{display:none;}
+  .gal-mosaic{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(4,130px);}
+  .gt:nth-child(1){grid-column:span 2;grid-row:span 2;}
+  .gt:nth-child(n+7){display:none;}
+  .pkg-grid{grid-template-columns:1fr;}
+  .frow{grid-template-columns:1fr;}
+  .form-box{padding:24px 18px;}
+  .ft-top{grid-template-columns:1fr;gap:22px;}
+  .sec{padding:66px 5%;}
+  .reviews-grid{grid-template-columns:1fr;}
+  .today-banner{justify-content:flex-start;}
+  .calc-box{padding:28px 22px;}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important;}
+}
+</style>
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- TOAST -->
+<div class="toast" id="toast" role="alert" aria-live="polite"><i class="fa-solid fa-circle-check"></i><span id="toast-msg">Booking sent!</span></div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" onclick="closeLb()" aria-label="Close photo viewer"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lb-nav lb-prev" onclick="lbNav(-1)" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
+  <img class="lb-img" id="lb-img" src="" alt="Gallery photo">
+  <button class="lb-nav lb-next" onclick="lbNav(1)" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
+  <div class="lb-counter" id="lb-counter"></div>
+</div>
 
 <!-- LOADER -->
-<div class="loader" id="loader">
+<div class="loader" id="loader" aria-hidden="true">
   <div class="loader-logo">Destiny Gardens</div>
-  <div class="loader-sub">Nairobi, Kenya</div>
+  <div class="loader-sub">Ruiru · Nairobi</div>
   <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
 </div>
 
 <!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" onclick="closeMob()"><i class="fa-solid fa-xmark"></i></button>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <button class="mobile-close" onclick="closeMob()" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
   <a href="#about-sec" onclick="closeMob()">About</a>
   <a href="#exp-sec" onclick="closeMob()">Experiences</a>
   <a href="#pkg-sec" onclick="closeMob()">Packages</a>
   <a href="#gal-sec" onclick="closeMob()">Gallery</a>
   <a href="#booking-sec" onclick="closeMob()">Book Now</a>
+  <a href="tel:+254721444144" class="mob-call"><i class="fa-solid fa-phone"></i> 0721 444 144</a>
 </div>
 
 <!-- NAV -->
-<nav id="navbar">
-  <a href="#" class="nav-brand">
-    <div class="nav-logo-icon"><i class="fa-solid fa-leaf"></i></div>
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="#" class="nav-brand" aria-label="Destiny Gardens – Home">
+    <div class="nav-logo-icon" aria-hidden="true"><i class="fa-solid fa-leaf"></i></div>
     <span class="nav-brand-text">Destiny Gardens</span>
   </a>
-  <ul class="nav-links">
+  <ul class="nav-links" role="list">
     <li><a href="#about-sec">About</a></li>
     <li><a href="#exp-sec">Experiences</a></li>
     <li><a href="#pkg-sec">Packages</a></li>
     <li><a href="#gal-sec">Gallery</a></li>
     <li><a href="#visit-sec">Visit</a></li>
   </ul>
-  <a href="#booking-sec" class="nav-book">Reserve Your Day <i class="fa-solid fa-arrow-right" style="font-size:.75rem;margin-left:2px;"></i></a>
-  <div class="hamburger" onclick="openMob()"><span></span><span></span><span></span></div>
+  <div class="nav-actions">
+    <a href="tel:+254721444144" class="nav-call" aria-label="Call us: 0721 444 144"><i class="fa-solid fa-phone"></i> 0721 444 144</a>
+    <a href="#booking-sec" class="nav-book">Reserve Your Day <i class="fa-solid fa-arrow-right" style="font-size:.75rem;"></i></a>
+  </div>
+  <button class="hamburger" onclick="openMob()" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- HERO -->
-<section id="hero">
-  <div class="hero-bg" id="heroBg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow"><i class="fa-solid fa-leaf"></i> Nairobi's Premier Family Destination</div>
+<section id="hero" aria-label="Hero">
+  <div class="hero-bg" id="heroBg" role="img" aria-label="Destiny Gardens resort view"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content" id="main-content">
+    <div class="hero-eyebrow" aria-hidden="true"><i class="fa-solid fa-leaf"></i> Ruiru · Nairobi</div>
     <h1 class="hero-headline">Where Every Family<br><em>Finds Their Joy</em></h1>
-    <p class="hero-sub">Crystal-clear pools, thrilling adventures for kids, world-class event hosting — all nestled in Nairobi's most beautiful garden retreat.</p>
+    <p class="hero-swahili">Karibu Destiny Gardens — Mahali pa Familia</p>
+    <p class="hero-sub">Crystal-clear pools, thrilling adventures for kids, world-class event hosting — all nestled in Ruiru's most beautiful garden retreat.</p>
     <div class="hero-actions">
-      <a href="#booking-sec" class="btn-gold">Reserve Your Day <i class="fa-solid fa-arrow-right" style="margin-left:6px;font-size:.85rem;"></i></a>
-      <a href="#exp-sec" class="btn-outline-w">Explore Experiences</a>
+      <a href="#booking-sec" class="btn-gold">Book Your Day Out <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#exp-sec" class="btn-outline-w"><i class="fa-solid fa-play" style="font-size:.75rem;"></i> Explore Experiences</a>
     </div>
   </div>
-  <div class="hero-stat-row">
+  <div class="hero-stat-row" aria-label="Resort statistics">
     <div class="stat-cell"><span class="stat-n">5K+</span><span class="stat-l">Happy Families</span></div>
-    <div class="stat-cell"><span class="stat-n">4.9<i class="fa-solid fa-star" style="font-size:1.1rem;color:var(--amber);margin-left:2px;"></i></span><span class="stat-l">Google Rating</span></div>
+    <div class="stat-cell"><span class="stat-n">4.9<i class="fa-solid fa-star" style="font-size:.9rem;color:var(--amber);margin-left:2px;" aria-label="stars"></i></span><span class="stat-l">Google Rating</span></div>
     <div class="stat-cell"><span class="stat-n">7 Yrs</span><span class="stat-l">Of Memories</span></div>
   </div>
-  <div class="scroll-cue">Scroll</div>
+  <div class="scroll-cue" aria-hidden="true">Scroll</div>
 </section>
 
+<!-- TODAY'S HOURS BANNER -->
+<div class="today-banner" id="todayBanner" role="status" aria-live="polite">
+  <div class="tb-status" id="tbStatus">
+    <div class="tb-dot"></div>
+    <span id="tbText">Loading hours...</span>
+  </div>
+  <span class="tb-time" id="tbTime"></span>
+  <a href="#booking-sec" class="tb-cta">Book Now</a>
+</div>
+
 <!-- ABOUT -->
-<section id="about-sec">
+<section id="about-sec" aria-labelledby="about-heading">
   <div class="about-grid">
     <div class="about-photos reveal-l">
-      <div class="ap-main"></div>
-      <div class="ap-accent"></div>
-      <div class="ap-badge"><strong>7+</strong><span>Years of Joy</span></div>
+      <div class="ap-main" role="img" aria-label="Destiny Gardens interior"></div>
+      <div class="ap-accent" role="img" aria-label="Pool area"></div>
+      <div class="ap-badge" aria-label="7 plus years of joy"><strong>7+</strong><span>Years of Joy</span></div>
     </div>
     <div class="about-copy reveal-r">
-      <div class="lbl"><div class="lbl-dash"></div><span class="lbl-txt">Our Story</span></div>
-      <h2 class="sec-h" style="color:#fff;">More Than a Day Out.<br><em style="color:var(--amber);">A Memory Made.</em></h2>
-      <p class="sec-p">Destiny Gardens was born from a single dream — giving Nairobi families a place to truly disconnect, recharge, and create moments they'll talk about for years. We've grown into the city's most-loved family resort, and we're just getting started.</p>
+      <div class="lbl"><div class="lbl-dash" aria-hidden="true"></div><span class="lbl-txt">Our Story</span></div>
+      <h2 class="sec-h" id="about-heading" style="color:#fff;">More Than a Day Out.<br><em style="color:var(--amber);">A Memory Made.</em></h2>
+      <p class="sec-p">Born from a single dream — giving Nairobi families a place to truly disconnect, recharge, and create moments they'll talk about for years. Along Ruiru-Kiambu Road, we've grown into the city's most-loved family resort.</p>
       <div class="perks">
-        <div class="perk">
-          <div class="perk-ico"><i class="fa-solid fa-water-ladder"></i></div>
-          <div><h5>Olympic-Grade Pool</h5><p>Maintained daily, with certified lifeguards on duty</p></div>
-        </div>
-        <div class="perk">
-          <div class="perk-ico"><i class="fa-solid fa-child-reaching"></i></div>
-          <div><h5>Kids Adventure Zone</h5><p>Safe, thrilling play that kids beg to come back for</p></div>
-        </div>
-        <div class="perk">
-          <div class="perk-ico"><i class="fa-solid fa-champagne-glasses"></i></div>
-          <div><h5>Private Event Hosting</h5><p>Birthdays, school trips, team events — fully catered</p></div>
-        </div>
-        <div class="perk">
-          <div class="perk-ico"><i class="fa-solid fa-seedling"></i></div>
-          <div><h5>Lush Garden Grounds</h5><p>Serene, beautifully landscaped grounds to unwind in</p></div>
-        </div>
+        <div class="perk"><div class="perk-ico" aria-hidden="true"><i class="fa-solid fa-water-ladder"></i></div><div><h5>Olympic-Grade Pool</h5><p>Maintained daily, lifeguards on duty</p></div></div>
+        <div class="perk"><div class="perk-ico" aria-hidden="true"><i class="fa-solid fa-child-reaching"></i></div><div><h5>Kids Adventure Zone</h5><p>Safe, thrilling play they beg to return for</p></div></div>
+        <div class="perk"><div class="perk-ico" aria-hidden="true"><i class="fa-solid fa-champagne-glasses"></i></div><div><h5>Private Event Hosting</h5><p>Birthdays, school trips, fully catered</p></div></div>
+        <div class="perk"><div class="perk-ico" aria-hidden="true"><i class="fa-solid fa-seedling"></i></div><div><h5>Lush Garden Grounds</h5><p>Beautifully landscaped space to unwind</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- EXPERIENCES -->
-<section id="exp-sec">
+<section id="exp-sec" aria-labelledby="exp-heading">
   <div class="sec">
     <div class="exp-hd">
       <div>
-        <div class="lbl reveal"><div class="lbl-dash"></div><span class="lbl-txt">What We Offer</span></div>
-        <h2 class="sec-h reveal">Experiences That <em>Delight</em></h2>
+        <div class="lbl reveal" aria-hidden="true"><div class="lbl-dash"></div><span class="lbl-txt">What We Offer</span></div>
+        <h2 class="sec-h reveal" id="exp-heading">Experiences That <em>Delight</em></h2>
       </div>
-      <a href="#booking-sec" class="btn-gold reveal">Book an Experience <i class="fa-solid fa-arrow-right" style="margin-left:6px;font-size:.85rem;"></i></a>
+      <a href="#booking-sec" class="btn-gold reveal">Book Now — From KSh 300 <i class="fa-solid fa-arrow-right"></i></a>
     </div>
     <div class="exp-grid">
-      <div class="ec lg reveal">
-        <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=900&q=80" alt="Swimming Pool" loading="lazy">
-        <div class="ec-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+      <div class="ec lg reveal" tabindex="0" role="button" aria-label="Swimming Pool – From KSh 300">
+        <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=900&q=80" alt="Crystal clear swimming pool at Destiny Gardens" loading="lazy">
+        <div class="ec-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
         <div class="ec-info"><div class="ec-tag">Most Popular</div><div class="ec-name">Swimming Pool</div><div class="ec-price">From KSh 300 / person</div></div>
       </div>
-      <div class="ec md reveal" style="transition-delay:.08s">
-        <img src="https://images.unsplash.com/photo-1566454825481-9c31d8fe0df5?w=800&q=80" alt="Kids Zone" loading="lazy">
-        <div class="ec-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+      <div class="ec md reveal" style="transition-delay:.08s" tabindex="0" role="button" aria-label="Adventure Play Zone – From KSh 200">
+        <img src="https://images.unsplash.com/photo-1566454825481-9c31d8fe0df5?w=800&q=80" alt="Kids adventure and play zone" loading="lazy">
+        <div class="ec-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
         <div class="ec-info"><div class="ec-tag">Kids Favourite</div><div class="ec-name">Adventure Play Zone</div><div class="ec-price">From KSh 200 / child</div></div>
       </div>
-      <div class="ec sm reveal" style="transition-delay:.16s">
-        <img src="https://images.unsplash.com/photo-1531537571171-a707bf2683da?w=700&q=80" alt="Events" loading="lazy">
-        <div class="ec-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+      <div class="ec sm reveal" style="transition-delay:.16s" tabindex="0" role="button" aria-label="Parties and Celebrations – From KSh 8,000">
+        <img src="https://images.unsplash.com/photo-1531537571171-a707bf2683da?w=700&q=80" alt="Birthday party and event setup" loading="lazy">
+        <div class="ec-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
         <div class="ec-info"><div class="ec-tag">Events</div><div class="ec-name">Parties & Celebrations</div><div class="ec-price">From KSh 8,000</div></div>
       </div>
-      <div class="ec wd reveal" style="transition-delay:.24s">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1100&q=80" alt="Restaurant" loading="lazy">
-        <div class="ec-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+      <div class="ec wd reveal" style="transition-delay:.24s" tabindex="0" role="button" aria-label="Garden Restaurant and Bar">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1100&q=80" alt="Garden restaurant and bar area" loading="lazy">
+        <div class="ec-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
         <div class="ec-info"><div class="ec-tag">Food & Drinks</div><div class="ec-name">Garden Restaurant & Bar</div><div class="ec-price">Order as you go</div></div>
       </div>
-      <div class="ec cpt reveal" style="transition-delay:.32s">
-        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80" alt="Relax" loading="lazy">
-        <div class="ec-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+      <div class="ec cpt reveal" style="transition-delay:.32s" tabindex="0" role="button" aria-label="Garden Lounge and Chill Zones – Included with entry">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80" alt="Relaxing garden lounge area" loading="lazy">
+        <div class="ec-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
         <div class="ec-info"><div class="ec-tag">Relaxation</div><div class="ec-name">Garden Lounge & Chill Zones</div><div class="ec-price">Included with entry</div></div>
       </div>
     </div>
@@ -145,163 +625,212 @@
 </section>
 
 <!-- PACKAGES -->
-<section id="pkg-sec">
+<section id="pkg-sec" aria-labelledby="pkg-heading">
   <div class="sec">
-    <div style="text-align:center;max-width:580px;margin:0 auto;">
-      <div class="lbl reveal" style="justify-content:center"><div class="lbl-dash"></div><span class="lbl-txt">Pricing & Packages</span><div class="lbl-dash"></div></div>
-      <h2 class="sec-h reveal">Simple, <em>Transparent</em> Prices</h2>
-      <p class="sec-p reveal" style="margin:0 auto 0;">No hidden fees. Just great value for an unforgettable day your whole family will love.</p>
+    <div style="text-align:center;max-width:560px;margin:0 auto;">
+      <div class="lbl reveal" style="justify-content:center" aria-hidden="true"><div class="lbl-dash"></div><span class="lbl-txt">Pricing & Packages</span><div class="lbl-dash"></div></div>
+      <h2 class="sec-h reveal" id="pkg-heading">Simple, <em>Transparent</em> Prices</h2>
+      <p class="sec-p reveal" style="margin:0 auto;">No hidden fees. Just great value for an unforgettable day your whole family will love.</p>
     </div>
     <div class="pkg-grid reveal">
       <div class="pkg">
-        <div class="pkg-ico"><i class="fa-solid fa-baby"></i></div>
+        <div class="pkg-ico" aria-hidden="true"><i class="fa-solid fa-baby"></i></div>
         <h3 class="pkg-nm">Little Ones</h3>
         <p class="pkg-tg">Fun-packed entry for children who never want to leave</p>
-        <div class="pkg-pr">KSh 200</div>
+        <div class="pkg-pr" aria-label="KSh 200">KSh 200</div>
         <div class="pkg-unit">Per child · Ages 3–12</div>
-        <ul class="pkg-feats">
-          <li><i class="fa-solid fa-circle-check"></i>Shallow pool access</li>
-          <li><i class="fa-solid fa-circle-check"></i>Slides &amp; bouncing castle</li>
-          <li><i class="fa-solid fa-circle-check"></i>Climbing frames &amp; sandpit</li>
-          <li><i class="fa-solid fa-circle-check"></i>Supervised play staff</li>
-          <li><i class="fa-solid fa-circle-check"></i>Changing rooms</li>
+        <ul class="pkg-feats" aria-label="Included features">
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Shallow pool access</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Slides &amp; bouncing castle</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Climbing frames &amp; sandpit</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Supervised play staff</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Changing rooms</li>
         </ul>
-        <a href="#booking-sec" class="pkg-cta">Book for kids <i class="fa-solid fa-arrow-right" style="font-size:.75rem;"></i></a>
+        <a href="#booking-sec" class="pkg-cta">Book for kids <i class="fa-solid fa-arrow-right" style="font-size:.72rem;"></i></a>
       </div>
       <div class="pkg">
-        <div class="pkg-ico"><i class="fa-solid fa-person-swimming"></i></div>
+        <div class="pkg-ico" aria-hidden="true"><i class="fa-solid fa-person-swimming"></i></div>
         <h3 class="pkg-nm">Adults</h3>
         <p class="pkg-tg">Full resort access to swim, eat, relax, and truly recharge</p>
-        <div class="pkg-pr">KSh 400</div>
+        <div class="pkg-pr" aria-label="KSh 400">KSh 400</div>
         <div class="pkg-unit">Per adult · Ages 13+</div>
         <ul class="pkg-feats">
-          <li><i class="fa-solid fa-circle-check"></i>Full pool access</li>
-          <li><i class="fa-solid fa-circle-check"></i>Garden lounge areas</li>
-          <li><i class="fa-solid fa-circle-check"></i>Restaurant &amp; bar access</li>
-          <li><i class="fa-solid fa-circle-check"></i>Free high-speed Wi-Fi</li>
-          <li><i class="fa-solid fa-circle-check"></i>Changing rooms &amp; lockers</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Full pool access</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Garden lounge areas</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Restaurant &amp; bar access</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Free high-speed Wi-Fi</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Changing rooms &amp; lockers</li>
         </ul>
-        <a href="#booking-sec" class="pkg-cta">Book entry <i class="fa-solid fa-arrow-right" style="font-size:.75rem;"></i></a>
+        <a href="#booking-sec" class="pkg-cta">Book entry <i class="fa-solid fa-arrow-right" style="font-size:.72rem;"></i></a>
       </div>
       <div class="pkg feat">
         <div class="pkg-badge">Best Value</div>
-        <div class="pkg-ico"><i class="fa-solid fa-people-roof"></i></div>
+        <div class="pkg-ico" aria-hidden="true"><i class="fa-solid fa-people-roof"></i></div>
         <h3 class="pkg-nm">Family Bundle</h3>
         <p class="pkg-tg">The whole family, one great price — more savings, more smiles</p>
-        <div class="pkg-pr">KSh 1,200</div>
+        <div class="pkg-pr" aria-label="KSh 1,200">KSh 1,200</div>
         <div class="pkg-unit">2 Adults + 2 Kids · One day</div>
         <ul class="pkg-feats">
-          <li><i class="fa-solid fa-circle-check"></i>Full resort access for all</li>
-          <li><i class="fa-solid fa-circle-check"></i>Reserved seating area</li>
-          <li><i class="fa-solid fa-circle-check"></i>10% off food &amp; drinks</li>
-          <li><i class="fa-solid fa-circle-check"></i>Priority check-in</li>
-          <li><i class="fa-solid fa-circle-check"></i>Free kids' souvenir</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Full resort access for all</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Reserved seating area</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>10% off food &amp; drinks</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Priority check-in</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Free kids' souvenir</li>
         </ul>
-        <a href="#booking-sec" class="pkg-cta">Book family <i class="fa-solid fa-arrow-right" style="font-size:.75rem;"></i></a>
+        <a href="#booking-sec" class="pkg-cta">Book family <i class="fa-solid fa-arrow-right" style="font-size:.72rem;"></i></a>
       </div>
       <div class="pkg">
-        <div class="pkg-ico"><i class="fa-solid fa-cake-candles"></i></div>
+        <div class="pkg-ico" aria-hidden="true"><i class="fa-solid fa-cake-candles"></i></div>
         <h3 class="pkg-nm">Birthday Party</h3>
         <p class="pkg-tg">Celebrate the big day with a setup they'll never forget</p>
-        <div class="pkg-pr">From KSh 8K</div>
+        <div class="pkg-pr" aria-label="From KSh 8,000">From KSh 8K</div>
         <div class="pkg-unit">Min. 15 guests · Full support included</div>
         <ul class="pkg-feats">
-          <li><i class="fa-solid fa-circle-check"></i>Private decorated zone</li>
-          <li><i class="fa-solid fa-circle-check"></i>Pool + play zone access</li>
-          <li><i class="fa-solid fa-circle-check"></i>Dedicated event staff</li>
-          <li><i class="fa-solid fa-circle-check"></i>Catering options</li>
-          <li><i class="fa-solid fa-circle-check"></i>Custom photo backdrop</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Private decorated zone</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Pool + play zone access</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Dedicated event staff</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Catering options</li>
+          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Custom photo backdrop</li>
         </ul>
-        <a href="#booking-sec" class="pkg-cta">Plan party <i class="fa-solid fa-arrow-right" style="font-size:.75rem;"></i></a>
+        <a href="#booking-sec" class="pkg-cta">Plan party <i class="fa-solid fa-arrow-right" style="font-size:.72rem;"></i></a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- PRICING CALCULATOR -->
+<div id="calc-sec" aria-labelledby="calc-heading">
+  <div class="calc-wrap">
+    <div class="calc-box reveal">
+      <div class="calc-left">
+        <div class="lbl" style="margin-bottom:12px;" aria-hidden="true"><div class="lbl-dash" style="background:rgba(245,158,11,.5);"></div><span class="lbl-txt" style="color:rgba(255,255,255,.35);">Price Calculator</span></div>
+        <h3 id="calc-heading">How Much Will<br>Your Visit Cost?</h3>
+        <p>Adjust the sliders to see your estimated entry cost before you book. No surprises at the gate.</p>
+      </div>
+      <div>
+        <div class="calc-controls">
+          <div class="calc-row">
+            <div class="calc-label">Adults <span>KSh 400 each</span></div>
+            <div class="calc-stepper">
+              <button onclick="adjustCalc('adults',-1)" aria-label="Remove adult"><i class="fa-solid fa-minus"></i></button>
+              <span id="c-adults" aria-live="polite">2</span>
+              <button onclick="adjustCalc('adults',1)" aria-label="Add adult"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+          <div class="calc-row">
+            <div class="calc-label">Children <span>KSh 200 each · Ages 3-12</span></div>
+            <div class="calc-stepper">
+              <button onclick="adjustCalc('kids',-1)" aria-label="Remove child"><i class="fa-solid fa-minus"></i></button>
+              <span id="c-kids" aria-live="polite">2</span>
+              <button onclick="adjustCalc('kids',1)" aria-label="Add child"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+          <div class="calc-total">
+            <span class="calc-total-label" id="calc-label-text">Estimated Total</span>
+            <span class="calc-total-price" id="calc-total" aria-live="polite">KSh 1,200</span>
+          </div>
+          <div id="calc-savings" style="font-size:.8rem;color:rgba(255,255,255,.5);text-align:right;margin-top:-8px;min-height:18px;"></div>
+        </div>
+        <button class="calc-book-btn" onclick="bookFromCalc()"><i class="fa-solid fa-calendar-check"></i> Book This Visit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- GALLERY -->
-<section id="gal-sec">
+<section id="gal-sec" aria-labelledby="gal-heading">
   <div class="gal-sec-wrap">
-    <div class="lbl gal-lbl reveal"><div class="lbl-dash"></div><span class="lbl-txt">Photo Gallery</span></div>
-    <h2 class="sec-h gal-heading reveal">See It <em style="color:var(--moss)">For Yourself</em></h2>
-    <div class="gal-mosaic">
-      <div class="gt reveal"><img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=900&q=80" alt="Pool" loading="lazy"><div class="gt-ov"><i class="fa-solid fa-water-ladder"></i></div></div>
-      <div class="gt reveal" style="transition-delay:.05s"><img src="https://images.unsplash.com/photo-1566454825481-9c31d8fe0df5?w=700&q=80" alt="Kids" loading="lazy"><div class="gt-ov"><i class="fa-solid fa-child-reaching"></i></div></div>
-      <div class="gt reveal" style="transition-delay:.1s"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80" alt="Food" loading="lazy"><div class="gt-ov"><i class="fa-solid fa-utensils"></i></div></div>
-      <div class="gt reveal" style="transition-delay:.15s"><img src="https://images.unsplash.com/photo-1531537571171-a707bf2683da?w=700&q=80" alt="Party" loading="lazy"><div class="gt-ov"><i class="fa-solid fa-champagne-glasses"></i></div></div>
-      <div class="gt reveal" style="transition-delay:.2s"><img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=700&q=80" alt="Fun" loading="lazy"><div class="gt-ov"><i class="fa-solid fa-face-laugh-beam"></i></div></div>
-      <div class="gt reveal" style="transition-delay:.25s"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80" alt="Gardens" loading="lazy"><div class="gt-ov"><i class="fa-solid fa-seedling"></i></div></div>
-      <div class="gt reveal" style="transition-delay:.3s"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80" alt="Relax" loading="lazy"><div class="gt-ov"><i class="fa-solid fa-spa"></i></div></div>
-      <div class="gt reveal" style="transition-delay:.35s"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=700&q=80" alt="Swim" loading="lazy"><div class="gt-ov"><i class="fa-solid fa-person-swimming"></i></div></div>
+    <div class="lbl" style="--lbl-dash-color:rgba(255,255,255,.38);" aria-hidden="true"><div class="lbl-dash"></div><span class="lbl-txt" style="color:rgba(255,255,255,.38);">Photo Gallery</span></div>
+    <h2 class="sec-h gal-heading reveal" id="gal-heading">See It <em style="color:var(--moss)">For Yourself</em></h2>
+    <div class="gal-mosaic" role="list" aria-label="Photo gallery">
+      <div class="gt reveal" tabindex="0" role="button" onclick="openLb(0)" onkeypress="if(event.key==='Enter')openLb(0)" aria-label="Pool photo"><img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=900&q=80" alt="Crystal clear swimming pool" loading="lazy"><div class="gt-ov" aria-hidden="true"><i class="fa-solid fa-water-ladder"></i></div></div>
+      <div class="gt reveal" style="transition-delay:.05s" tabindex="0" role="button" onclick="openLb(1)" onkeypress="if(event.key==='Enter')openLb(1)" aria-label="Kids zone photo"><img src="https://images.unsplash.com/photo-1566454825481-9c31d8fe0df5?w=700&q=80" alt="Kids adventure play zone" loading="lazy"><div class="gt-ov" aria-hidden="true"><i class="fa-solid fa-child-reaching"></i></div></div>
+      <div class="gt reveal" style="transition-delay:.1s" tabindex="0" role="button" onclick="openLb(2)" onkeypress="if(event.key==='Enter')openLb(2)" aria-label="Restaurant photo"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80" alt="Garden restaurant and bar" loading="lazy"><div class="gt-ov" aria-hidden="true"><i class="fa-solid fa-utensils"></i></div></div>
+      <div class="gt reveal" style="transition-delay:.15s" tabindex="0" role="button" onclick="openLb(3)" onkeypress="if(event.key==='Enter')openLb(3)" aria-label="Party photo"><img src="https://images.unsplash.com/photo-1531537571171-a707bf2683da?w=700&q=80" alt="Birthday party celebration" loading="lazy"><div class="gt-ov" aria-hidden="true"><i class="fa-solid fa-champagne-glasses"></i></div></div>
+      <div class="gt reveal" style="transition-delay:.2s" tabindex="0" role="button" onclick="openLb(4)" onkeypress="if(event.key==='Enter')openLb(4)" aria-label="Family fun photo"><img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=700&q=80" alt="Family fun at Destiny Gardens" loading="lazy"><div class="gt-ov" aria-hidden="true"><i class="fa-solid fa-face-laugh-beam"></i></div></div>
+      <div class="gt reveal" style="transition-delay:.25s" tabindex="0" role="button" onclick="openLb(5)" onkeypress="if(event.key==='Enter')openLb(5)" aria-label="Garden photo"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80" alt="Lush garden grounds" loading="lazy"><div class="gt-ov" aria-hidden="true"><i class="fa-solid fa-seedling"></i></div></div>
+      <div class="gt reveal" style="transition-delay:.3s" tabindex="0" role="button" onclick="openLb(6)" onkeypress="if(event.key==='Enter')openLb(6)" aria-label="Lounge photo"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80" alt="Relaxing lounge area" loading="lazy"><div class="gt-ov" aria-hidden="true"><i class="fa-solid fa-spa"></i></div></div>
+      <div class="gt reveal" style="transition-delay:.35s" tabindex="0" role="button" onclick="openLb(7)" onkeypress="if(event.key==='Enter')openLb(7)" aria-label="Pool swimming photo"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=700&q=80" alt="Swimming at Destiny Gardens" loading="lazy"><div class="gt-ov" aria-hidden="true"><i class="fa-solid fa-person-swimming"></i></div></div>
     </div>
   </div>
 </section>
 
 <!-- SAFETY -->
-<section id="safety-sec">
+<section id="safety-sec" aria-labelledby="safety-heading">
   <div class="sec">
     <div class="safety-grid">
-      <div class="safety-photo reveal-l">
+      <div class="safety-photo reveal-l" role="img" aria-label="Certified lifeguards on duty">
         <div class="safety-badge">
-          <div class="sb-ico"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="sb-ico" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
           <div class="sb-txt"><strong>Certified Lifeguards</strong><span>On duty every single day</span></div>
         </div>
       </div>
       <div class="reveal-r">
-        <div class="lbl"><div class="lbl-dash"></div><span class="lbl-txt">Safety First</span></div>
-        <h2 class="sec-h">Your Family's Safety is<br>Our <em>Priority</em></h2>
+        <div class="lbl" aria-hidden="true"><div class="lbl-dash"></div><span class="lbl-txt">Safety First</span></div>
+        <h2 class="sec-h" id="safety-heading">Your Family's Safety is<br>Our <em>Priority</em></h2>
         <p class="sec-p">We've built a world where kids can be kids — and parents can genuinely relax. Every measure is in place so you can focus entirely on the fun.</p>
         <div class="safety-list">
-          <div class="si"><div class="si-num">01</div><div><h5>Certified Lifeguards On Duty</h5><p>Red Cross-trained lifeguards stationed at all pools every day during operating hours — zero compromise on this.</p></div></div>
-          <div class="si"><div class="si-num">02</div><div><h5>Separated Shallow &amp; Deep Zones</h5><p>Kids' pool is physically separated, shallow, clearly marked, and supervised. Adults swim safely in the main pool.</p></div></div>
-          <div class="si"><div class="si-num">03</div><div><h5>On-Site First Aid Station</h5><p>Fully-stocked first aid kit and trained staff ready to assist any situation swiftly.</p></div></div>
-          <div class="si"><div class="si-num">04</div><div><h5>Supervised Adventure Play</h5><p>All equipment is age-verified and inspected weekly. Staff present at all activity zones throughout the day.</p></div></div>
-          <div class="si"><div class="si-num">05</div><div><h5>Gated, Secure Premises</h5><p>CCTV throughout, controlled entry points, and uniformed security personnel for complete peace of mind.</p></div></div>
+          <div class="si"><div class="si-num" aria-hidden="true">01</div><div><h5>Certified Lifeguards On Duty</h5><p>Red Cross-trained lifeguards stationed at all pools every day during operating hours — zero compromise.</p></div></div>
+          <div class="si"><div class="si-num" aria-hidden="true">02</div><div><h5>Separated Shallow &amp; Deep Zones</h5><p>Kids' pool is physically separated, shallow, clearly marked, and supervised at all times.</p></div></div>
+          <div class="si"><div class="si-num" aria-hidden="true">03</div><div><h5>On-Site First Aid Station</h5><p>Fully-stocked first aid kit and trained staff ready to assist any situation swiftly.</p></div></div>
+          <div class="si"><div class="si-num" aria-hidden="true">04</div><div><h5>Supervised Adventure Play</h5><p>Age-verified equipment inspected weekly. Staff present at all activity zones throughout the day.</p></div></div>
+          <div class="si"><div class="si-num" aria-hidden="true">05</div><div><h5>Gated, Secure Premises</h5><p>CCTV throughout, controlled entry, and uniformed security for complete peace of mind.</p></div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- REVIEWS -->
+<section id="reviews-sec" aria-labelledby="reviews-heading">
+  <div class="sec">
+    <div class="reviews-header reveal">
+      <div class="lbl" style="justify-content:center;" aria-hidden="true"><div class="lbl-dash"></div><span class="lbl-txt">What Families Say</span><div class="lbl-dash"></div></div>
+      <h2 class="sec-h" id="reviews-heading" style="text-align:center;">Real Stories from <em>Real Families</em></h2>
+      <p class="sec-p" style="text-align:center;">Hundreds of Nairobi families have made their best memories here. Here's what they say.</p>
+      <div class="google-badge" aria-label="4.9 star Google rating">
+        <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15.2 16.5 19.3 14 24 14c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2c-7.8 0-14.6 4.6-17.7 12.7z"/><path fill="#FBBC05" d="M24 46c5.4 0 10.3-1.8 14.1-4.9l-6.5-5.3C29.6 37.4 27 38 24 38c-6.1 0-11.3-3.8-13.4-9.3l-7 5.4C7.1 41.1 15 46 24 46z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1.2 3.2-3.5 5.8-6.5 7.4l6.5 5.3C40.3 37.4 45 31.3 45 24c0-1.3-.2-2.7-.5-4z"/></svg>
+        <div><div class="g-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
+        <span>4.9 on Google · 312 reviews</span>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="rcard reveal"><div class="rcard-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="rcard-source"><i class="fa-brands fa-google"></i> Google</span></div><p class="rcard-text">"Best birthday party venue in Nairobi, hands down. My daughter is still talking about it three months later. The staff went truly above and beyond!"</p><div class="rcard-author"><div class="rcard-avatar" aria-hidden="true">G</div><div><strong>Grace Wanjiku</strong><span>Nairobi West · 2 months ago</span></div></div></div>
+      <div class="rcard reveal" style="transition-delay:.1s"><div class="rcard-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="rcard-source"><i class="fa-brands fa-google"></i> Google</span></div><p class="rcard-text">"We come every weekend! The kids absolutely love the pool and adventure zone. The whole place just feels like a proper resort. Highly recommended."</p><div class="rcard-author"><div class="rcard-avatar" style="background:var(--forest-mid);" aria-hidden="true">J</div><div><strong>James Otieno</strong><span>Westlands · 3 weeks ago</span></div></div></div>
+      <div class="rcard reveal" style="transition-delay:.2s"><div class="rcard-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="rcard-source"><i class="fa-brands fa-google"></i> Google</span></div><p class="rcard-text">"Took our school group of 40 kids — the staff handled everything perfectly. Lifeguards were professional, grounds are beautiful. We'll be back!"</p><div class="rcard-author"><div class="rcard-avatar" style="background:#7c5a2a;" aria-hidden="true">F</div><div><strong>Faith Kamau</strong><span>Ruiru · 1 month ago</span></div></div></div>
+    </div>
+  </div>
+</section>
+
 <!-- BOOKING -->
-<section id="booking-sec">
+<section id="booking-sec" aria-labelledby="booking-heading">
   <div class="sec">
     <div class="booking-grid">
       <div class="bk-info">
-        <div class="lbl"><div class="lbl-dash" style="background:rgba(245,158,11,.55)"></div><span class="lbl-txt">Reservations</span></div>
-        <h2 class="sec-h" style="color:#fff;">Ready to Make<br><em style="color:var(--amber);">Memories?</em></h2>
-        <p class="sec-p">Fill in the form and we'll confirm your booking via WhatsApp within 2 hours. Or message us directly for instant assistance.</p>
-        <div class="testimonials reveal">
-          <div class="tcard">
-            <div class="tcard-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <p class="tcard-text">"Best birthday party venue in Nairobi, hands down. My daughter is still talking about it three months later. The staff went above and beyond!"</p>
-            <div class="tcard-author">
-              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&q=80" alt="Grace">
-              <div><strong>Grace Wanjiku</strong><span>Nairobi West</span></div>
-            </div>
-          </div>
-          <div class="tcard">
-            <div class="tcard-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <p class="tcard-text">"We come every weekend. The kids absolutely love the pool and adventure zone — the whole place just feels like a proper resort. Highly recommended."</p>
-            <div class="tcard-author">
-              <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=80&q=80" alt="James">
-              <div><strong>James Otieno</strong><span>Westlands, Nairobi</span></div>
-            </div>
-          </div>
+        <div class="lbl" aria-hidden="true"><div class="lbl-dash" style="background:rgba(245,158,11,.5)"></div><span class="lbl-txt">Reservations</span></div>
+        <h2 class="sec-h" id="booking-heading" style="color:#fff;">Ready to Make<br><em style="color:var(--amber);">Memories?</em></h2>
+        <p class="sec-p">Fill in the form and we'll confirm via WhatsApp within 2 hours. Or contact us directly below.</p>
+        <div class="trust-signals" aria-label="Trust signals">
+          <div class="ts"><i class="fa-solid fa-bolt" aria-hidden="true"></i>Confirmed within 2 hours via WhatsApp</div>
+          <div class="ts"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i>Secure booking — no card required</div>
+          <div class="ts"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i>Free cancellation up to 24hrs before</div>
+          <div class="ts"><i class="fa-solid fa-star" aria-hidden="true"></i>4.9★ rated by 312+ families on Google</div>
+          <div class="ts"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>M-Pesa Paybill available for deposits</div>
         </div>
       </div>
       <div class="form-box reveal-r">
         <h3 class="form-title">Book Your Visit</h3>
-        <p class="form-sub">We'll confirm within 2 hours via WhatsApp.</p>
+        <p class="form-sub">We confirm within 2 hours via WhatsApp <i class="fa-brands fa-whatsapp" style="color:#25D366;"></i></p>
         <div class="frow">
-          <div class="fg"><label>Full Name</label><input type="text" id="fn" placeholder="Jane Mwangi"></div>
-          <div class="fg"><label>Phone Number</label><input type="tel" id="fp" placeholder="07XX XXX XXX"></div>
+          <div class="fg" id="fg-name"><label for="fn">Full Name <span style="color:var(--danger)">*</span></label><input type="text" id="fn" placeholder="Jane Mwangi" autocomplete="name" aria-required="true"><span class="field-err">Please enter your full name</span></div>
+          <div class="fg" id="fg-phone"><label for="fp">Phone Number <span style="color:var(--danger)">*</span></label><input type="tel" id="fp" placeholder="0721 444 144" autocomplete="tel" aria-required="true"><span class="field-err">Please enter a valid phone number</span></div>
         </div>
         <div class="frow">
-          <div class="fg"><label>Date of Visit</label><input type="date" id="fd"></div>
-          <div class="fg"><label>No. of Guests</label><input type="number" id="fg2" placeholder="e.g. 4" min="1"></div>
+          <div class="fg" id="fg-date"><label for="fd">Date of Visit <span style="color:var(--danger)">*</span></label><input type="date" id="fd" aria-required="true"><span class="field-err">Please select a date</span></div>
+          <div class="fg"><label for="fg2">No. of Guests</label><input type="number" id="fg2" placeholder="e.g. 4" min="1" max="500" autocomplete="off"></div>
         </div>
-        <div class="fg"><label>Visit / Event Type</label>
-          <select id="ft">
+        <div class="fg" id="fg-type"><label for="ft">Visit / Event Type <span style="color:var(--danger)">*</span></label>
+          <select id="ft" aria-required="true">
             <option value="">Select a package...</option>
             <option>Regular Family Visit</option>
             <option>Kids Birthday Party</option>
@@ -311,46 +840,99 @@
             <option>Family Reunion</option>
             <option>Other</option>
           </select>
+          <span class="field-err">Please select a visit type</span>
         </div>
-        <div class="fg"><label>Special Requests (Optional)</label><textarea id="fn2" rows="3" placeholder="Dietary needs, setup preferences, or anything else..."></textarea></div>
-        <button class="btn-submit" onclick="doBook()"><span>Confirm Booking Request</span><i class="fa-solid fa-arrow-right"></i></button>
-        <p class="form-wa">Prefer instant chat? <a href="https://wa.me/254700000000?text=Hi!%20I'd%20like%20to%20book%20a%20visit%20to%20Destiny%20Gardens." target="_blank"><i class="fa-brands fa-whatsapp"></i> Message us on WhatsApp</a></p>
+        <div class="fg"><label for="fn2">Special Requests (Optional)</label><textarea id="fn2" rows="3" placeholder="Dietary needs, setup preferences, time of arrival..."></textarea></div>
+        <button class="btn-submit" onclick="doBook()"><i class="fa-brands fa-whatsapp"></i> <span>Send Booking Request</span></button>
+        <div class="form-alternatives">
+          <a href="https://wa.me/254721444144?text=Hi!%20I'd%20like%20to%20book%20a%20visit%20to%20Destiny%20Gardens." target="_blank" rel="noopener" class="alt-btn wa" aria-label="Message us on WhatsApp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          <a href="tel:+254721444144" class="alt-btn call" aria-label="Call us on 0721 444 144"><i class="fa-solid fa-phone"></i> Call Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq-sec" aria-labelledby="faq-heading">
+  <div class="sec">
+    <div class="lbl reveal" aria-hidden="true"><div class="lbl-dash"></div><span class="lbl-txt">Frequently Asked</span></div>
+    <h2 class="sec-h reveal" id="faq-heading">Good to Know <em>Before You Visit</em></h2>
+    <div class="faq-grid">
+      <div class="faq-list" role="list">
+        <div class="faq-item reveal" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" tabindex="0" onkeypress="if(event.key==='Enter')toggleFaq(this)" aria-expanded="false" role="button">What should we bring? <i class="fa-solid fa-plus" aria-hidden="true"></i></div>
+          <div class="faq-a" role="region"><div class="faq-a-inner">Bring swimwear, towels, sunscreen, and a change of clothes for the kids. You're welcome to bring packed snacks, though our restaurant and bar serve fresh food and drinks throughout the day.</div></div>
+        </div>
+        <div class="faq-item reveal" style="transition-delay:.08s" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" tabindex="0" onkeypress="if(event.key==='Enter')toggleFaq(this)" aria-expanded="false" role="button">What are the pool rules for children? <i class="fa-solid fa-plus" aria-hidden="true"></i></div>
+          <div class="faq-a" role="region"><div class="faq-a-inner">Children under 12 must use the dedicated shallow kids' pool, which is supervised by staff. Children under 5 must be accompanied by an adult in the water at all times. Floaties and armbands are available at the gate.</div></div>
+        </div>
+        <div class="faq-item reveal" style="transition-delay:.12s" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" tabindex="0" onkeypress="if(event.key==='Enter')toggleFaq(this)" aria-expanded="false" role="button">How do I pay? M-Pesa accepted? <i class="fa-solid fa-plus" aria-hidden="true"></i></div>
+          <div class="faq-a" role="region"><div class="faq-a-inner">Yes! We accept M-Pesa, cash, and bank cards at the gate. For events and birthday parties, a deposit can be paid via M-Pesa Paybill. Contact us for deposit details when booking your event.</div></div>
+        </div>
+        <div class="faq-item reveal" style="transition-delay:.16s" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" tabindex="0" onkeypress="if(event.key==='Enter')toggleFaq(this)" aria-expanded="false" role="button">Do you host school trips and groups? <i class="fa-solid fa-plus" aria-hidden="true"></i></div>
+          <div class="faq-a" role="region"><div class="faq-a-inner">Absolutely! We regularly host school trips, church groups, and corporate outings. Group bookings of 20+ get special rates. Call or WhatsApp us in advance to plan your group's visit and we'll take care of the rest.</div></div>
+        </div>
+        <div class="faq-item reveal" style="transition-delay:.2s" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" tabindex="0" onkeypress="if(event.key==='Enter')toggleFaq(this)" aria-expanded="false" role="button">Is there parking available? <i class="fa-solid fa-plus" aria-hidden="true"></i></div>
+          <div class="faq-a" role="region"><div class="faq-a-inner">Yes, we have ample free parking within our gated compound. The venue is accessible from Ruiru-Kiambu Road (Kamiti Road), opposite the Tatu City area. Follow signage from the main road.</div></div>
+        </div>
+        <div class="faq-item reveal" style="transition-delay:.24s" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" tabindex="0" onkeypress="if(event.key==='Enter')toggleFaq(this)" aria-expanded="false" role="button">Can I book for tomorrow or the same day? <i class="fa-solid fa-plus" aria-hidden="true"></i></div>
+          <div class="faq-a" role="region"><div class="faq-a-inner">For regular family visits, walk-ins are welcome! For birthday parties, school trips, and events, we recommend booking at least 3–7 days in advance to guarantee your spot and preferred setup.</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="faq-image reveal-r" role="img" aria-label="Families enjoying the pool at Destiny Gardens">
+          <div class="faq-img-badge"><i class="fa-solid fa-circle-question"></i> Still have questions? Call us — 0721 444 144</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- VISIT -->
-<section id="visit-sec">
+<section id="visit-sec" aria-labelledby="visit-heading">
   <div class="sec">
-    <div class="lbl reveal" style="justify-content:center;margin-bottom:12px;"><div class="lbl-dash"></div><span class="lbl-txt">Plan Your Visit</span><div class="lbl-dash"></div></div>
-    <h2 class="sec-h reveal" style="text-align:center;margin-bottom:48px;">Everything You <em>Need to Know</em></h2>
+    <div class="lbl reveal" style="justify-content:center;margin-bottom:12px;" aria-hidden="true"><div class="lbl-dash"></div><span class="lbl-txt">Plan Your Visit</span><div class="lbl-dash"></div></div>
+    <h2 class="sec-h reveal" id="visit-heading" style="text-align:center;margin-bottom:44px;">Everything You <em>Need to Know</em></h2>
     <div class="visit-grid">
       <div class="info-box reveal-l">
-        <div class="info-box-head"><i class="fa-regular fa-clock"></i><h3>Opening Hours</h3></div>
-        <div class="info-box-body">
-          <div class="hr-row"><span>Monday</span><span>9:00 AM – 7:00 PM</span></div>
-          <div class="hr-row"><span>Tuesday</span><span>9:00 AM – 7:00 PM</span></div>
-          <div class="hr-row"><span>Wednesday</span><span>9:00 AM – 7:00 PM</span></div>
-          <div class="hr-row"><span>Thursday</span><span>9:00 AM – 7:00 PM</span></div>
-          <div class="hr-row"><span>Friday</span><span>9:00 AM – 8:00 PM</span></div>
-          <div class="hr-row today-row"><span>Saturday <i class="fa-solid fa-star" style="font-size:.6rem;"></i></span><span>8:00 AM – 9:00 PM</span></div>
-          <div class="hr-row today-row"><span>Sunday <i class="fa-solid fa-star" style="font-size:.6rem;"></i></span><span>8:00 AM – 8:00 PM</span></div>
+        <div class="info-box-head"><i class="fa-regular fa-clock" aria-hidden="true"></i><h3>Opening Hours</h3></div>
+        <div class="info-box-body" id="hoursTable">
+          <div class="hr-row" data-day="1"><span>Monday</span><span>9:00 AM – 7:00 PM</span></div>
+          <div class="hr-row" data-day="2"><span>Tuesday</span><span>9:00 AM – 7:00 PM</span></div>
+          <div class="hr-row" data-day="3"><span>Wednesday</span><span>9:00 AM – 7:00 PM</span></div>
+          <div class="hr-row" data-day="4"><span>Thursday</span><span>9:00 AM – 7:00 PM</span></div>
+          <div class="hr-row" data-day="5"><span>Friday</span><span>9:00 AM – 8:00 PM</span></div>
+          <div class="hr-row" data-day="6"><span>Saturday</span><span>8:00 AM – 9:00 PM</span></div>
+          <div class="hr-row" data-day="0"><span>Sunday</span><span>8:00 AM – 8:00 PM</span></div>
           <div class="hr-row"><span>Public Holidays</span><span>8:00 AM – 9:00 PM</span></div>
         </div>
       </div>
-      <div class="reveal-r" style="display:flex;flex-direction:column;gap:20px;">
+      <div class="reveal-r" style="display:flex;flex-direction:column;gap:16px;">
         <div class="info-box">
-          <div class="info-box-head"><i class="fa-solid fa-location-dot"></i><h3>Contact &amp; Location</h3></div>
+          <div class="info-box-head"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><h3>Contact &amp; Location</h3></div>
           <div class="info-box-body">
             <div class="ct-list">
-              <div class="ct-row"><div class="ct-ico"><i class="fa-solid fa-map-pin"></i></div><div class="ct-ro"><h6>Location</h6><p>Off Thika Road, Nairobi<br>Near [Your Landmark Here]</p></div></div>
-              <div class="ct-row"><div class="ct-ico"><i class="fa-solid fa-phone"></i></div><div class="ct-ro"><h6>Phone</h6><a href="tel:+254700000000">+254 700 000 000</a></div></div>
-              <div class="ct-row"><div class="ct-ico"><i class="fa-regular fa-envelope"></i></div><div class="ct-ro"><h6>Email</h6><a href="mailto:hello@destinygardens.co.ke">hello@destinygardens.co.ke</a></div></div>
+              <div class="ct-row"><div class="ct-ico" aria-hidden="true"><i class="fa-solid fa-map-pin"></i></div><div class="ct-ro"><h6>Location</h6><p>Along Ruiru-Kiambu Road (Kamiti Road)<br>Kijani Area, opposite Tatu City, Ruiru</p></div></div>
+              <div class="ct-row"><div class="ct-ico" aria-hidden="true"><i class="fa-solid fa-phone"></i></div><div class="ct-ro"><h6>Phone / WhatsApp</h6><a href="tel:+254721444144">0721 444 144</a></div></div>
+              <div class="ct-row"><div class="ct-ico" aria-hidden="true"><i class="fa-regular fa-envelope"></i></div><div class="ct-ro"><h6>Email</h6><a href="mailto:hello@destinygardens.co.ke">hello@destinygardens.co.ke</a></div></div>
             </div>
           </div>
         </div>
-        <a href="https://wa.me/254700000000?text=Hi!%20I'd%20like%20to%20book%20a%20visit%20to%20Destiny%20Gardens." target="_blank" class="wa-big"><i class="fa-brands fa-whatsapp" style="font-size:1.3rem;"></i> Chat with Us on WhatsApp</a>
+        <!-- Google Maps Embed placeholder — replace src with real embed URL -->
+        <div class="map-embed" aria-label="Map showing Destiny Gardens location">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.153218!2d36.9613!3d-1.1474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMDgnNTAuNiJTIDM2wrA1NycwMC43IkU!5e0!3m2!1sen!2ske!4v1"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Destiny Gardens location on Google Maps"></iframe>
+        </div>
+        <a href="https://maps.google.com/?q=Destiny+Gardens+Ruiru+Kamiti+Road" target="_blank" rel="noopener" class="directions-btn"><i class="fa-solid fa-route"></i> Get Directions on Google Maps</a>
+        <a href="https://wa.me/254721444144?text=Hi!%20I'd%20like%20to%20book%20a%20visit%20to%20Destiny%20Gardens." target="_blank" rel="noopener" class="wa-big"><i class="fa-brands fa-whatsapp" style="font-size:1.25rem;"></i> Chat with Us on WhatsApp</a>
       </div>
     </div>
   </div>
@@ -360,35 +942,183 @@
 <footer>
   <div class="ft-top">
     <div>
-      <div class="ft-brand"><i class="fa-solid fa-leaf"></i> Destiny Gardens</div>
-      <p class="ft-about">Nairobi's most-loved family resort. Swim, play, celebrate, and relax — everything in one beautiful place.</p>
+      <div class="ft-brand"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Destiny Gardens</div>
+      <p class="ft-tagline">Karibu — Mahali pa Familia</p>
+      <p class="ft-about">Nairobi's most-loved family resort in Ruiru. Swim, play, celebrate, and relax — everything in one beautiful place. Along Ruiru-Kiambu Road, Kijani Area.</p>
     </div>
     <div class="ft-col"><h5>Explore</h5><ul>
       <li><a href="#about-sec">About Us</a></li>
       <li><a href="#exp-sec">Experiences</a></li>
       <li><a href="#pkg-sec">Packages</a></li>
       <li><a href="#gal-sec">Gallery</a></li>
+      <li><a href="#faq-sec">FAQs</a></li>
     </ul></div>
     <div class="ft-col"><h5>Visit</h5><ul>
-      <li><a href="#booking-sec">Book a Visit</a></li>
-      <li><a href="#booking-sec">Plan an Event</a></li>
-      <li><a href="#visit-sec">Opening Hours</a></li>
-      <li><a href="#visit-sec">Contact Us</a></li>
+      <li><a href="#booking-sec"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i>Book a Visit</a></li>
+      <li><a href="#booking-sec"><i class="fa-solid fa-cake-candles" aria-hidden="true"></i>Plan an Event</a></li>
+      <li><a href="#visit-sec"><i class="fa-regular fa-clock" aria-hidden="true"></i>Opening Hours</a></li>
+      <li><a href="#visit-sec"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>How to Find Us</a></li>
+      <li><a href="tel:+254721444144"><i class="fa-solid fa-phone" aria-hidden="true"></i>0721 444 144</a></li>
     </ul></div>
     <div class="ft-col"><h5>Connect</h5><ul>
-      <li><a href="#"><i class="fa-brands fa-facebook" style="width:16px;margin-right:6px;"></i>Facebook</a></li>
-      <li><a href="#"><i class="fa-brands fa-instagram" style="width:16px;margin-right:6px;"></i>Instagram</a></li>
-      <li><a href="#"><i class="fa-brands fa-tiktok" style="width:16px;margin-right:6px;"></i>TikTok</a></li>
-      <li><a href="https://wa.me/254700000000" target="_blank"><i class="fa-brands fa-whatsapp" style="width:16px;margin-right:6px;"></i>WhatsApp</a></li>
+      <li><a href="https://facebook.com/destinygardens" target="_blank" rel="noopener"><i class="fa-brands fa-facebook" aria-hidden="true"></i>Facebook</a></li>
+      <li><a href="https://instagram.com/destinygardenruiru" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i>@destinygardenruiru</a></li>
+      <li><a href="https://tiktok.com/@destinygardens.officialpage" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok" aria-hidden="true"></i>TikTok</a></li>
+      <li><a href="https://wa.me/254721444144" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>WhatsApp</a></li>
     </ul></div>
   </div>
   <div class="ft-bot">
-    <p class="ft-copy">© 2025 Destiny Gardens. All rights reserved.</p>
-    <a href="#">Privacy Policy</a>
+    <p class="ft-copy">© 2026 Destiny Gardens, Ruiru. All rights reserved.</p>
+    <div style="display:flex;gap:16px;">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
   </div>
 </footer>
 
-<a href="https://wa.me/254700000000?text=Hi!%20I'd%20like%20to%20book%20a%20visit%20to%20Destiny%20Gardens." class="float-wa" target="_blank" title="WhatsApp us"><i class="fa-brands fa-whatsapp"></i></a>
-<script src="js/index.js"></script>
+<!-- FLOATING BUTTONS -->
+<div class="float-btns" aria-label="Quick contact">
+  <a href="https://wa.me/254721444144?text=Hi!%20I'd%20like%20to%20book%20a%20visit%20to%20Destiny%20Gardens." class="float-wa" target="_blank" rel="noopener" aria-label="Message us on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <a href="tel:+254721444144" class="float-call" aria-label="Call us on 0721 444 144"><i class="fa-solid fa-phone"></i></a>
+</div>
+
+<script>
+// ── LOADER
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    document.getElementById('loader').classList.add('gone');
+    document.getElementById('heroBg').classList.add('loaded');
+  },2000);
+});
+
+// ── CURSOR (desktop only)
+if(window.innerWidth>900){
+  const cur=document.getElementById('cursor')||document.createElement('div'),ring=document.getElementById('cursorRing')||document.createElement('div');
+  document.addEventListener('mousemove',e=>{
+    cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+    setTimeout(()=>{ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';},80);
+  });
+  document.querySelectorAll('a,button,.ec,.pkg,.gt').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.2)';ring.style.opacity='0';});
+    el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';ring.style.opacity='.5';});
+  });
+}
+
+// ── NAVBAR SCROLL
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>55));
+
+// ── SCROLL REVEAL
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:.1});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
+
+// ── MOBILE MENU
+function openMob(){const m=document.getElementById('mobileMenu');m.classList.add('open');document.body.style.overflow='hidden';document.querySelector('.hamburger').setAttribute('aria-expanded','true');}
+function closeMob(){const m=document.getElementById('mobileMenu');m.classList.remove('open');document.body.style.overflow='';document.querySelector('.hamburger').setAttribute('aria-expanded','false');}
+
+// ── SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}}));
+
+// ── TODAY'S HOURS + BANNER
+const hours={0:{open:'08:00',close:'20:00',label:'Sunday'},1:{open:'09:00',close:'19:00',label:'Monday'},2:{open:'09:00',close:'19:00',label:'Tuesday'},3:{open:'09:00',close:'19:00',label:'Wednesday'},4:{open:'09:00',close:'19:00',label:'Thursday'},5:{open:'09:00',close:'20:00',label:'Friday'},6:{open:'08:00',close:'21:00',label:'Saturday'}};
+function initHours(){
+  const now=new Date(),day=now.getDay(),h=now.getHours(),m=now.getMinutes();
+  const info=hours[day];
+  const [oh,om]=info.open.split(':').map(Number);
+  const [ch,cm]=info.close.split(':').map(Number);
+  const isOpen=(h*60+m>=oh*60+om)&&(h*60+m<ch*60+cm);
+  const banner=document.getElementById('todayBanner');
+  const dot=banner.querySelector('.tb-dot');
+  document.getElementById('tbText').textContent=isOpen?`Open Now · ${info.label}`:`Closed · Opens ${info.open} ${info.label}`;
+  document.getElementById('tbTime').textContent=isOpen?`Closes ${info.close}`:``;
+  if(!isOpen){banner.classList.add('tb-closed');dot.style.background='#ef4444';}
+  // Highlight today in hours table
+  const rows=document.querySelectorAll('#hoursTable .hr-row[data-day]');
+  rows.forEach(r=>{
+    if(parseInt(r.dataset.day)===day){
+      r.classList.add('today-row');
+      const tag=document.createElement('span');tag.className='today-tag';tag.textContent='Today';
+      r.querySelector('span').appendChild(tag);
+    }
+  });
+}
+initHours();
+
+// ── LIGHTBOX
+const lbImgs=['https://images.unsplash.com/photo-1530549387789-4c1017266635?w=1200&q=85','https://images.unsplash.com/photo-1566454825481-9c31d8fe0df5?w=1000&q=85','https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=85','https://images.unsplash.com/photo-1531537571171-a707bf2683da?w=1000&q=85','https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1000&q=85','https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=85','https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=85','https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1200&q=85'];
+let lbIdx=0;
+function openLb(i){lbIdx=i;document.getElementById('lb-img').src=lbImgs[i];document.getElementById('lb-counter').textContent=(i+1)+' / '+lbImgs.length;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
+function closeLb(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+function lbNav(d){lbIdx=(lbIdx+d+lbImgs.length)%lbImgs.length;openLb(lbIdx);}
+document.getElementById('lightbox').addEventListener('click',e=>{if(e.target===e.currentTarget)closeLb();});
+document.addEventListener('keydown',e=>{if(document.getElementById('lightbox').classList.contains('open')){if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')lbNav(-1);if(e.key==='ArrowRight')lbNav(1);}});
+
+// ── PRICING CALCULATOR
+const PRICES={adults:400,kids:200,bundle:{adults:2,kids:2,price:1200}};
+let cAdults=2,cKids=2;
+function adjustCalc(t,d){
+  if(t==='adults'){cAdults=Math.max(0,cAdults+d);document.getElementById('c-adults').textContent=cAdults;}
+  else{cKids=Math.max(0,cKids+d);document.getElementById('c-kids').textContent=cKids;}
+  recalc();
+}
+function recalc(){
+  let total=cAdults*PRICES.adults+cKids*PRICES.kids;
+  // Check if bundle applies
+  let savings=0,label='Estimated Total';
+  if(cAdults>=2&&cKids>=2){
+    const bundles=Math.min(Math.floor(cAdults/2),Math.floor(cKids/2));
+    const bundleSave=bundles*(2*PRICES.adults+2*PRICES.kids-PRICES.bundle.price);
+    if(bundleSave>0){savings=bundleSave;total-=bundleSave;label='With Family Bundle discount';}
+  }
+  document.getElementById('calc-total').textContent='KSh '+total.toLocaleString();
+  document.getElementById('calc-label-text').textContent=label;
+  document.getElementById('calc-savings').textContent=savings>0?'You save KSh '+savings.toLocaleString()+' with the Family Bundle! 🎉':'';
+}
+recalc();
+function bookFromCalc(){
+  const msg=`Hi! I'd like to book a visit to Destiny Gardens.%0A%0A👥 Adults: ${cAdults}%0A👶 Children: ${cKids}%0A💰 Estimated: KSh ${(cAdults*PRICES.adults+cKids*PRICES.kids).toLocaleString()}%0A%0APlease confirm availability.`;
+  window.open(`https://wa.me/254721444144?text=${msg}`,'_blank');
+}
+
+// ── FAQ ACCORDION
+function toggleFaq(el){
+  const item=el.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false');});
+  if(!isOpen){item.classList.add('open');el.setAttribute('aria-expanded','true');}
+}
+
+// ── FORM VALIDATION + BOOKING
+document.getElementById('fd').setAttribute('min',new Date().toISOString().split('T')[0]);
+function validateField(id,check){
+  const el=document.getElementById(id);
+  const fg=el.closest('.fg');
+  if(!fg||!fg.id)return check(el.value);
+  if(!check(el.value)){fg.classList.add('has-err');return false;}
+  fg.classList.remove('has-err');return true;
+}
+function doBook(){
+  const n=document.getElementById('fn').value.trim();
+  const p=document.getElementById('fp').value.trim();
+  const d=document.getElementById('fd').value;
+  const t=document.getElementById('ft').value;
+  const g=document.getElementById('fg2').value;
+  const note=document.getElementById('fn2').value.trim();
+  let valid=true;
+  if(!n){document.getElementById('fg-name').classList.add('has-err');valid=false;}else{document.getElementById('fg-name').classList.remove('has-err');}
+  if(!p||p.length<9){document.getElementById('fg-phone').classList.add('has-err');valid=false;}else{document.getElementById('fg-phone').classList.remove('has-err');}
+  if(!d){document.getElementById('fg-date').classList.add('has-err');valid=false;}else{document.getElementById('fg-date').classList.remove('has-err');}
+  if(!t){document.getElementById('fg-type').classList.add('has-err');valid=false;}else{document.getElementById('fg-type').classList.remove('has-err');}
+  if(!valid)return;
+  const msg=`Hi! I'd like to book a visit to Destiny Gardens.%0A%0A👤 Name: ${encodeURIComponent(n)}%0A📞 Phone: ${encodeURIComponent(p)}%0A📅 Date: ${encodeURIComponent(d)}%0A👥 Guests: ${encodeURIComponent(g||'TBC')}%0A🎯 Type: ${encodeURIComponent(t)}${note?'%0A📝 Note: '+encodeURIComponent(note):''}`;
+  window.open(`https://wa.me/254721444144?text=${msg}`,'_blank');
+  showToast('Booking sent! We\'ll confirm within 2 hours.');
+}
+function showToast(msg){
+  const t=document.getElementById('toast');
+  document.getElementById('toast-msg').textContent=msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),4000);
+}
+</script>
 </body>
 </html>
