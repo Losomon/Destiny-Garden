@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Destiny Gardens – Nairobi's Premier Family Resort</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-logo">Destiny Gardens</div>
+  <div class="loader-sub">Nairobi, Kenya</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMob()"><i class="fa-solid fa-xmark"></i></button>
+  <a href="#about-sec" onclick="closeMob()">About</a>
+  <a href="#exp-sec" onclick="closeMob()">Experiences</a>
+  <a href="#pkg-sec" onclick="closeMob()">Packages</a>
+  <a href="#gal-sec" onclick="closeMob()">Gallery</a>
+  <a href="#booking-sec" onclick="closeMob()">Book Now</a>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-brand">
+    <div class="nav-logo-icon"><i class="fa-solid fa-leaf"></i></div>
+    <span class="nav-brand-text">Destiny Gardens</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about-sec">About</a></li>
+    <li><a href="#exp-sec">Experiences</a></li>
+    <li><a href="#pkg-sec">Packages</a></li>
+    <li><a href="#gal-sec">Gallery</a></li>
+    <li><a href="#visit-sec">Visit</a></li>
+  </ul>
+  <a href="#booking-sec" class="nav-book">Reserve Your Day <i class="fa-solid fa-arrow-right" style="font-size:.75rem;margin-left:2px;"></i></a>
+  <div class="hamburger" onclick="openMob()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow"><i class="fa-solid fa-leaf"></i> Nairobi's Premier Family Destination</div>
+    <h1 class="hero-headline">Where Every Family<br><em>Finds Their Joy</em></h1>
+    <p class="hero-sub">Crystal-clear pools, thrilling adventures for kids, world-class event hosting — all nestled in Nairobi's most beautiful garden retreat.</p>
+    <div class="hero-actions">
+      <a href="#booking-sec" class="btn-gold">Reserve Your Day <i class="fa-solid fa-arrow-right" style="margin-left:6px;font-size:.85rem;"></i></a>
+      <a href="#exp-sec" class="btn-outline-w">Explore Experiences</a>
+    </div>
+  </div>
+  <div class="hero-stat-row">
+    <div class="stat-cell"><span class="stat-n">5K+</span><span class="stat-l">Happy Families</span></div>
+    <div class="stat-cell"><span class="stat-n">4.9<i class="fa-solid fa-star" style="font-size:1.1rem;color:var(--amber);margin-left:2px;"></i></span><span class="stat-l">Google Rating</span></div>
+    <div class="stat-cell"><span class="stat-n">7 Yrs</span><span class="stat-l">Of Memories</span></div>
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about-sec">
+  <div class="about-grid">
+    <div class="about-photos reveal-l">
+      <div class="ap-main"></div>
+      <div class="ap-accent"></div>
+      <div class="ap-badge"><strong>7+</strong><span>Years of Joy</span></div>
+    </div>
+    <div class="about-copy reveal-r">
+      <div class="lbl"><div class="lbl-dash"></div><span class="lbl-txt">Our Story</span></div>
+      <h2 class="sec-h" style="color:#fff;">More Than a Day Out.<br><em style="color:var(--amber);">A Memory Made.</em></h2>
+      <p class="sec-p">Destiny Gardens was born from a single dream — giving Nairobi families a place to truly disconnect, recharge, and create moments they'll talk about for years. We've grown into the city's most-loved family resort, and we're just getting started.</p>
+      <div class="perks">
+        <div class="perk">
+          <div class="perk-ico"><i class="fa-solid fa-water-ladder"></i></div>
+          <div><h5>Olympic-Grade Pool</h5><p>Maintained daily, with certified lifeguards on duty</p></div>
+        </div>
+        <div class="perk">
+          <div class="perk-ico"><i class="fa-solid fa-child-reaching"></i></div>
+          <div><h5>Kids Adventure Zone</h5><p>Safe, thrilling play that kids beg to come back for</p></div>
+        </div>
+        <div class="perk">
+          <div class="perk-ico"><i class="fa-solid fa-champagne-glasses"></i></div>
+          <div><h5>Private Event Hosting</h5><p>Birthdays, school trips, team events — fully catered</p></div>
+        </div>
+        <div class="perk">
+          <div class="perk-ico"><i class="fa-solid fa-seedling"></i></div>
+          <div><h5>Lush Garden Grounds</h5><p>Serene, beautifully landscaped grounds to unwind in</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCES -->
+<section id="exp-sec">
+  <div class="sec">
+    <div class="exp-hd">
+      <div>
+        <div class="lbl reveal"><div class="lbl-dash"></div><span class="lbl-txt">What We Offer</span></div>
+        <h2 class="sec-h reveal">Experiences That <em>Delight</em></h2>
+      </div>
+      <a href="#booking-sec" class="btn-gold reveal">Book an Experience <i class="fa-solid fa-arrow-right" style="margin-left:6px;font-size:.85rem;"></i></a>
+    </div>
+    <div class="exp-grid">
+      <div class="ec lg reveal">
+        <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=900&q=80" alt="Swimming Pool" loading="lazy">
+        <div class="ec-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        <div class="ec-info"><div class="ec-tag">Most Popular</div><div class="ec-name">Swimming Pool</div><div class="ec-price">From KSh 300 / person</div></div>
+      </div>
+      <div class="ec md reveal" style="transition-delay:.08s">
+        <img src="https://images.unsplash.com/photo-1566454825481-9c31d8fe0df5?w=800&q=80" alt="Kids Zone" loading="lazy">
+        <div class="ec-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        <div class="ec-info"><div class="ec-tag">Kids Favourite</div><div class="ec-name">Adventure Play Zone</div><div class="ec-price">From KSh 200 / child</div></div>
+      </div>
+      <div class="ec sm reveal" style="transition-delay:.16s">
+        <img src="https://images.unsplash.com/photo-1531537571171-a707bf2683da?w=700&q=80" alt="Events" loading="lazy">
+        <div class="ec-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        <div class="ec-info"><div class="ec-tag">Events</div><div class="ec-name">Parties & Celebrations</div><div class="ec-price">From KSh 8,000</div></div>
+      </div>
+      <div class="ec wd reveal" style="transition-delay:.24s">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1100&q=80" alt="Restaurant" loading="lazy">
+        <div class="ec-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        <div class="ec-info"><div class="ec-tag">Food & Drinks</div><div class="ec-name">Garden Restaurant & Bar</div><div class="ec-price">Order as you go</div></div>
+      </div>
+      <div class="ec cpt reveal" style="transition-delay:.32s">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80" alt="Relax" loading="lazy">
+        <div class="ec-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+        <div class="ec-info"><div class="ec-tag">Relaxation</div><div class="ec-name">Garden Lounge & Chill Zones</div><div class="ec-price">Included with entry</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="pkg-sec">
+  <div class="sec">
+    <div style="text-align:center;max-width:580px;margin:0 auto;">
+      <div class="lbl reveal" style="justify-content:center"><div class="lbl-dash"></div><span class="lbl-txt">Pricing & Packages</span><div class="lbl-dash"></div></div>
+      <h2 class="sec-h reveal">Simple, <em>Transparent</em> Prices</h2>
+      <p class="sec-p reveal" style="margin:0 auto 0;">No hidden fees. Just great value for an unforgettable day your whole family will love.</p>
+    </div>
+    <div class="pkg-grid reveal">
+      <div class="pkg">
+        <div class="pkg-ico"><i class="fa-solid fa-baby"></i></div>
+        <h3 class="pkg-nm">Little Ones</h3>
+        <p class="pkg-tg">Fun-packed entry for children who never want to leave</p>
+        <div class="pkg-pr">KSh 200</div>
+        <div class="pkg-unit">Per child · Ages 3–12</div>
+        <ul class="pkg-feats">
+          <li><i class="fa-solid fa-circle-check"></i>Shallow pool access</li>
+          <li><i class="fa-solid fa-circle-check"></i>Slides &amp; bouncing castle</li>
+          <li><i class="fa-solid fa-circle-check"></i>Climbing frames &amp; sandpit</li>
+          <li><i class="fa-solid fa-circle-check"></i>Supervised play staff</li>
+          <li><i class="fa-solid fa-circle-check"></i>Changing rooms</li>
+        </ul>
+        <a href="#booking-sec" class="pkg-cta">Book for kids <i class="fa-solid fa-arrow-right" style="font-size:.75rem;"></i></a>
+      </div>
+      <div class="pkg">
+        <div class="pkg-ico"><i class="fa-solid fa-person-swimming"></i></div>
+        <h3 class="pkg-nm">Adults</h3>
+        <p class="pkg-tg">Full resort access to swim, eat, relax, and truly recharge</p>
+        <div class="pkg-pr">KSh 400</div>
+        <div class="pkg-unit">Per adult · Ages 13+</div>
+        <ul class="pkg-feats">
+          <li><i class="fa-solid fa-circle-check"></i>Full pool access</li>
+          <li><i class="fa-solid fa-circle-check"></i>Garden lounge areas</li>
+          <li><i class="fa-solid fa-circle-check"></i>Restaurant &amp; bar access</li>
+          <li><i class="fa-solid fa-circle-check"></i>Free high-speed Wi-Fi</li>
+          <li><i class="fa-solid fa-circle-check"></i>Changing rooms &amp; lockers</li>
+        </ul>
+        <a href="#booking-sec" class="pkg-cta">Book entry <i class="fa-solid fa-arrow-right" style="font-size:.75rem;"></i></a>
+      </div>
+      <div class="pkg feat">
+        <div class="pkg-badge">Best Value</div>
+        <div class="pkg-ico"><i class="fa-solid fa-people-roof"></i></div>
+        <h3 class="pkg-nm">Family Bundle</h3>
+        <p class="pkg-tg">The whole family, one great price — more savings, more smiles</p>
+        <div class="pkg-pr">KSh 1,200</div>
+        <div class="pkg-unit">2 Adults + 2 Kids · One day</div>
+        <ul class="pkg-feats">
+          <li><i class="fa-solid fa-circle-check"></i>Full resort access for all</li>
+          <li><i class="fa-solid fa-circle-check"></i>Reserved seating area</li>
+          <li><i class="fa-solid fa-circle-check"></i>10% off food &amp; drinks</li>
+          <li><i class="fa-solid fa-circle-check"></i>Priority check-in</li>
+          <li><i class="fa-solid fa-circle-check"></i>Free kids' souvenir</li>
+        </ul>
+        <a href="#booking-sec" class="pkg-cta">Book family <i class="fa-solid fa-arrow-right" style="font-size:.75rem;"></i></a>
+      </div>
+      <div class="pkg">
+        <div class="pkg-ico"><i class="fa-solid fa-cake-candles"></i></div>
+        <h3 class="pkg-nm">Birthday Party</h3>
+        <p class="pkg-tg">Celebrate the big day with a setup they'll never forget</p>
+        <div class="pkg-pr">From KSh 8K</div>
+        <div class="pkg-unit">Min. 15 guests · Full support included</div>
+        <ul class="pkg-feats">
+          <li><i class="fa-solid fa-circle-check"></i>Private decorated zone</li>
+          <li><i class="fa-solid fa-circle-check"></i>Pool + play zone access</li>
+          <li><i class="fa-solid fa-circle-check"></i>Dedicated event staff</li>
+          <li><i class="fa-solid fa-circle-check"></i>Catering options</li>
+          <li><i class="fa-solid fa-circle-check"></i>Custom photo backdrop</li>
+        </ul>
+        <a href="#booking-sec" class="pkg-cta">Plan party <i class="fa-solid fa-arrow-right" style="font-size:.75rem;"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gal-sec">
+  <div class="gal-sec-wrap">
+    <div class="lbl gal-lbl reveal"><div class="lbl-dash"></div><span class="lbl-txt">Photo Gallery</span></div>
+    <h2 class="sec-h gal-heading reveal">See It <em style="color:var(--moss)">For Yourself</em></h2>
+    <div class="gal-mosaic">
+      <div class="gt reveal"><img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=900&q=80" alt="Pool" loading="lazy"><div class="gt-ov"><i class="fa-solid fa-water-ladder"></i></div></div>
+      <div class="gt reveal" style="transition-delay:.05s"><img src="https://images.unsplash.com/photo-1566454825481-9c31d8fe0df5?w=700&q=80" alt="Kids" loading="lazy"><div class="gt-ov"><i class="fa-solid fa-child-reaching"></i></div></div>
+      <div class="gt reveal" style="transition-delay:.1s"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80" alt="Food" loading="lazy"><div class="gt-ov"><i class="fa-solid fa-utensils"></i></div></div>
+      <div class="gt reveal" style="transition-delay:.15s"><img src="https://images.unsplash.com/photo-1531537571171-a707bf2683da?w=700&q=80" alt="Party" loading="lazy"><div class="gt-ov"><i class="fa-solid fa-champagne-glasses"></i></div></div>
+      <div class="gt reveal" style="transition-delay:.2s"><img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=700&q=80" alt="Fun" loading="lazy"><div class="gt-ov"><i class="fa-solid fa-face-laugh-beam"></i></div></div>
+      <div class="gt reveal" style="transition-delay:.25s"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80" alt="Gardens" loading="lazy"><div class="gt-ov"><i class="fa-solid fa-seedling"></i></div></div>
+      <div class="gt reveal" style="transition-delay:.3s"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80" alt="Relax" loading="lazy"><div class="gt-ov"><i class="fa-solid fa-spa"></i></div></div>
+      <div class="gt reveal" style="transition-delay:.35s"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=700&q=80" alt="Swim" loading="lazy"><div class="gt-ov"><i class="fa-solid fa-person-swimming"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY -->
+<section id="safety-sec">
+  <div class="sec">
+    <div class="safety-grid">
+      <div class="safety-photo reveal-l">
+        <div class="safety-badge">
+          <div class="sb-ico"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="sb-txt"><strong>Certified Lifeguards</strong><span>On duty every single day</span></div>
+        </div>
+      </div>
+      <div class="reveal-r">
+        <div class="lbl"><div class="lbl-dash"></div><span class="lbl-txt">Safety First</span></div>
+        <h2 class="sec-h">Your Family's Safety is<br>Our <em>Priority</em></h2>
+        <p class="sec-p">We've built a world where kids can be kids — and parents can genuinely relax. Every measure is in place so you can focus entirely on the fun.</p>
+        <div class="safety-list">
+          <div class="si"><div class="si-num">01</div><div><h5>Certified Lifeguards On Duty</h5><p>Red Cross-trained lifeguards stationed at all pools every day during operating hours — zero compromise on this.</p></div></div>
+          <div class="si"><div class="si-num">02</div><div><h5>Separated Shallow &amp; Deep Zones</h5><p>Kids' pool is physically separated, shallow, clearly marked, and supervised. Adults swim safely in the main pool.</p></div></div>
+          <div class="si"><div class="si-num">03</div><div><h5>On-Site First Aid Station</h5><p>Fully-stocked first aid kit and trained staff ready to assist any situation swiftly.</p></div></div>
+          <div class="si"><div class="si-num">04</div><div><h5>Supervised Adventure Play</h5><p>All equipment is age-verified and inspected weekly. Staff present at all activity zones throughout the day.</p></div></div>
+          <div class="si"><div class="si-num">05</div><div><h5>Gated, Secure Premises</h5><p>CCTV throughout, controlled entry points, and uniformed security personnel for complete peace of mind.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking-sec">
+  <div class="sec">
+    <div class="booking-grid">
+      <div class="bk-info">
+        <div class="lbl"><div class="lbl-dash" style="background:rgba(245,158,11,.55)"></div><span class="lbl-txt">Reservations</span></div>
+        <h2 class="sec-h" style="color:#fff;">Ready to Make<br><em style="color:var(--amber);">Memories?</em></h2>
+        <p class="sec-p">Fill in the form and we'll confirm your booking via WhatsApp within 2 hours. Or message us directly for instant assistance.</p>
+        <div class="testimonials reveal">
+          <div class="tcard">
+            <div class="tcard-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="tcard-text">"Best birthday party venue in Nairobi, hands down. My daughter is still talking about it three months later. The staff went above and beyond!"</p>
+            <div class="tcard-author">
+              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&q=80" alt="Grace">
+              <div><strong>Grace Wanjiku</strong><span>Nairobi West</span></div>
+            </div>
+          </div>
+          <div class="tcard">
+            <div class="tcard-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="tcard-text">"We come every weekend. The kids absolutely love the pool and adventure zone — the whole place just feels like a proper resort. Highly recommended."</p>
+            <div class="tcard-author">
+              <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=80&q=80" alt="James">
+              <div><strong>James Otieno</strong><span>Westlands, Nairobi</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-box reveal-r">
+        <h3 class="form-title">Book Your Visit</h3>
+        <p class="form-sub">We'll confirm within 2 hours via WhatsApp.</p>
+        <div class="frow">
+          <div class="fg"><label>Full Name</label><input type="text" id="fn" placeholder="Jane Mwangi"></div>
+          <div class="fg"><label>Phone Number</label><input type="tel" id="fp" placeholder="07XX XXX XXX"></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Date of Visit</label><input type="date" id="fd"></div>
+          <div class="fg"><label>No. of Guests</label><input type="number" id="fg2" placeholder="e.g. 4" min="1"></div>
+        </div>
+        <div class="fg"><label>Visit / Event Type</label>
+          <select id="ft">
+            <option value="">Select a package...</option>
+            <option>Regular Family Visit</option>
+            <option>Kids Birthday Party</option>
+            <option>School Trip</option>
+            <option>Corporate / Team Outing</option>
+            <option>Church / Community Group</option>
+            <option>Family Reunion</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg"><label>Special Requests (Optional)</label><textarea id="fn2" rows="3" placeholder="Dietary needs, setup preferences, or anything else..."></textarea></div>
+        <button class="btn-submit" onclick="doBook()"><span>Confirm Booking Request</span><i class="fa-solid fa-arrow-right"></i></button>
+        <p class="form-wa">Prefer instant chat? <a href="https://wa.me/254700000000?text=Hi!%20I'd%20like%20to%20book%20a%20visit%20to%20Destiny%20Gardens." target="_blank"><i class="fa-brands fa-whatsapp"></i> Message us on WhatsApp</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit-sec">
+  <div class="sec">
+    <div class="lbl reveal" style="justify-content:center;margin-bottom:12px;"><div class="lbl-dash"></div><span class="lbl-txt">Plan Your Visit</span><div class="lbl-dash"></div></div>
+    <h2 class="sec-h reveal" style="text-align:center;margin-bottom:48px;">Everything You <em>Need to Know</em></h2>
+    <div class="visit-grid">
+      <div class="info-box reveal-l">
+        <div class="info-box-head"><i class="fa-regular fa-clock"></i><h3>Opening Hours</h3></div>
+        <div class="info-box-body">
+          <div class="hr-row"><span>Monday</span><span>9:00 AM – 7:00 PM</span></div>
+          <div class="hr-row"><span>Tuesday</span><span>9:00 AM – 7:00 PM</span></div>
+          <div class="hr-row"><span>Wednesday</span><span>9:00 AM – 7:00 PM</span></div>
+          <div class="hr-row"><span>Thursday</span><span>9:00 AM – 7:00 PM</span></div>
+          <div class="hr-row"><span>Friday</span><span>9:00 AM – 8:00 PM</span></div>
+          <div class="hr-row today-row"><span>Saturday <i class="fa-solid fa-star" style="font-size:.6rem;"></i></span><span>8:00 AM – 9:00 PM</span></div>
+          <div class="hr-row today-row"><span>Sunday <i class="fa-solid fa-star" style="font-size:.6rem;"></i></span><span>8:00 AM – 8:00 PM</span></div>
+          <div class="hr-row"><span>Public Holidays</span><span>8:00 AM – 9:00 PM</span></div>
+        </div>
+      </div>
+      <div class="reveal-r" style="display:flex;flex-direction:column;gap:20px;">
+        <div class="info-box">
+          <div class="info-box-head"><i class="fa-solid fa-location-dot"></i><h3>Contact &amp; Location</h3></div>
+          <div class="info-box-body">
+            <div class="ct-list">
+              <div class="ct-row"><div class="ct-ico"><i class="fa-solid fa-map-pin"></i></div><div class="ct-ro"><h6>Location</h6><p>Off Thika Road, Nairobi<br>Near [Your Landmark Here]</p></div></div>
+              <div class="ct-row"><div class="ct-ico"><i class="fa-solid fa-phone"></i></div><div class="ct-ro"><h6>Phone</h6><a href="tel:+254700000000">+254 700 000 000</a></div></div>
+              <div class="ct-row"><div class="ct-ico"><i class="fa-regular fa-envelope"></i></div><div class="ct-ro"><h6>Email</h6><a href="mailto:hello@destinygardens.co.ke">hello@destinygardens.co.ke</a></div></div>
+            </div>
+          </div>
+        </div>
+        <a href="https://wa.me/254700000000?text=Hi!%20I'd%20like%20to%20book%20a%20visit%20to%20Destiny%20Gardens." target="_blank" class="wa-big"><i class="fa-brands fa-whatsapp" style="font-size:1.3rem;"></i> Chat with Us on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-brand"><i class="fa-solid fa-leaf"></i> Destiny Gardens</div>
+      <p class="ft-about">Nairobi's most-loved family resort. Swim, play, celebrate, and relax — everything in one beautiful place.</p>
+    </div>
+    <div class="ft-col"><h5>Explore</h5><ul>
+      <li><a href="#about-sec">About Us</a></li>
+      <li><a href="#exp-sec">Experiences</a></li>
+      <li><a href="#pkg-sec">Packages</a></li>
+      <li><a href="#gal-sec">Gallery</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>Visit</h5><ul>
+      <li><a href="#booking-sec">Book a Visit</a></li>
+      <li><a href="#booking-sec">Plan an Event</a></li>
+      <li><a href="#visit-sec">Opening Hours</a></li>
+      <li><a href="#visit-sec">Contact Us</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>Connect</h5><ul>
+      <li><a href="#"><i class="fa-brands fa-facebook" style="width:16px;margin-right:6px;"></i>Facebook</a></li>
+      <li><a href="#"><i class="fa-brands fa-instagram" style="width:16px;margin-right:6px;"></i>Instagram</a></li>
+      <li><a href="#"><i class="fa-brands fa-tiktok" style="width:16px;margin-right:6px;"></i>TikTok</a></li>
+      <li><a href="https://wa.me/254700000000" target="_blank"><i class="fa-brands fa-whatsapp" style="width:16px;margin-right:6px;"></i>WhatsApp</a></li>
+    </ul></div>
+  </div>
+  <div class="ft-bot">
+    <p class="ft-copy">© 2025 Destiny Gardens. All rights reserved.</p>
+    <a href="#">Privacy Policy</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/254700000000?text=Hi!%20I'd%20like%20to%20book%20a%20visit%20to%20Destiny%20Gardens." class="float-wa" target="_blank" title="WhatsApp us"><i class="fa-brands fa-whatsapp"></i></a>
+<script src="js/index.js"></script>
+</body>
+</html>
