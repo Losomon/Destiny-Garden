@@ -124,6 +124,6 @@ The website is **mobile-first**, accessible, and visually appealing, combining r
 
 ---
 
-**Made with ❤️ for Nairobi families · Built by BLACKBOXAI**  
+**Made with ❤️ for Nairobi families · Built by Losomon**  
 *Last updated: 2026*
 
