@@ -118,7 +118,7 @@ The website is **mobile-first**, accessible, and visually appealing, combining r
 
 ### 7. **Appendix**
 - **Contact**: 0721 444 144 | hello@destinygardens.co.ke
-- **Live Site**: [TBD]
+- **Live Site**: https://destiny-garden.vercel.app
 - **Repo**: https://github.com/Losomon/Destiny-Garden
 - Image credits: Unsplash (production-ready, replace with real photos)
 
