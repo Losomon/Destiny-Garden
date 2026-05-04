@@ -75,6 +75,17 @@ The website is **mobile-first**, accessible, and visually appealing, combining r
 
 **Live Preview**: Open `frontend/index.html` in any browser. Fully self-contained.
 
+[![GitHub](https://img.shields.io/github/license/Losomon/Destiny-Garden?color=green)](LICENSE) [![GitHub issues](https://img.shields.io/github/issues/Losomon/Destiny-Garden)](https://github.com/Losomon/Destiny-Garden/issues)
+
+## 🤝 Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details. New to open source? Check [how to contribute](https://opensource.guide/how-to-contribute/).
+
+## 📋 Community Standards
+
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security Policy](SECURITY.md)
+
 ## ✅ Next Steps for Deployment
 
 1. **Host** on a reliable domain (e.g., `destinygardens.co.ke`)
@@ -83,6 +94,7 @@ The website is **mobile-first**, accessible, and visually appealing, combining r
 4. **Regularly update** images, packages, and testimonials
 5. **Optimize** mobile experience and loading speed for Kenyan networks
 6. **GitHub Pages**: `git subtree push --prefix frontend origin gh-pages`
+
 
 ## 📖 Documentation / Presentation Outline
 
